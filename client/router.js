@@ -17,3 +17,10 @@ FlowRouter.route('/drugs', {
     BlazeLayout.render("Layout", {content: "Drugs"});
   }
 });
+
+FlowRouter.route('/toolbox', {
+  name: 'Toolbox.show',
+  action: function() {
+    BlazeLayout.render("Layout", {content: "Toolbox"});
+  }
+});

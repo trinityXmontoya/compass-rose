@@ -173,6 +173,16 @@ Template.MeetingFinder.onCreated(function () {
 
 });
 
+Template.MeetingFinder.events({
+	"submit form#meeting-finder-location-entry" (evt,instance){
+		evt.preventDefault();
+		var state = evt.currentTarget.state.value
+		var city = evt.currentTarget.city.value
+		console.log(state, city)
+		var handle = Meteor.subscribe("meetings.all", city, state);
+	}
+})
+
 Template.NA_Meeting_Search.onRendered(function () {
 	$("#na-meeting-finder-chosen").chosen({
     inherit_select_classes: true,
