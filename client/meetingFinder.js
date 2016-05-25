@@ -201,10 +201,11 @@ Template.NA_Meeting_Search.events({
 		url = "http://www.na.org/meetingsearch/map-results.php" +
 					"?state=" + state + "&city=" + city + "&within=" + dist;
 					console.log(url)
-		instance.currentMeetingResultsUrl.set(url)
-		// console.log(instance)
-		// form.state.value = ""
-		// form.city.value = ""
-		// form.dist.value = ""
+		IframeUrl.set(url)
+		$("div#iframe-modal").show()
+		// TODO BTR^
+		form.state.value = ""
+		form.city.value = ""
+		form.dist.value = ""
 	}
 })
