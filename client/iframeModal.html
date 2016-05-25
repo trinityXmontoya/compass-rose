@@ -1,0 +1,12 @@
+<template name="IframeModal">
+  <div id="iframe-modal">
+    <button id="iframe-modal-close-btn">X</button>
+    <header>
+      <div>
+        <p><a href="{{iframeUrl}}" target="_blank">Link to Info</a> if page does not load</p>
+      </div>
+    </header>
+
+    <iframe src="{{iframeUrl}}" frameborder="0"></iframe>
+  </div>
+</template>

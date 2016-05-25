@@ -1,0 +1,15 @@
+<template name="Layout">
+<head>
+  <title>Samhsa</title>
+</head>
+
+<body>
+  <h1>SAMHSA</h1>
+
+  {{>Template.dynamic template=content}}
+
+  {{>Nav}}
+
+  {{>IframeModal iframeUrl=iframeUrl}}
+</body>
+</template>

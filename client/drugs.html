@@ -1,0 +1,31 @@
+<template name="Drugs">
+  <ul>
+    <li><a href="#" class="drug" data-value="methadone">Methadone</a></li>
+    <li><a href="#" class="drug" data-value="buprenorphine">Buprenorphine</a></li>
+    <li><a href="#" class="drug" data-value="naltrexone">Naltrexone</a></li>
+
+    {{#if selection}}
+      {{>Drugs_info drug=selection}}
+    {{/if}}
+  </ul>
+</template>
+
+<template name="Drugs_info">
+
+<h2>Basic Information</h2>
+<li><a href="{{drug.source}}" class="external-link">{{capitalize drug.name}}</a></li>
+
+  <h2>Side Effects</h2>
+  <ul>
+    <li><a href="{{drug.sideEffectsListLink}}" class="external-link">Common Side Effects</a></li>
+    <li><a href="{{drug.sideEffectMgmtLink}}" class="external-link">Side Effect Management</a></li>
+  </ul>
+
+
+  <h2>Interactions with other Drugs</h2>
+  <ul>
+    <li><a href="{{drug.interactionCheckerLink}}" class="external-link">Medscape Interaction Checker</a></li>
+    <li>Warning: There are potentially adverse effects of combining with Benzodiazepines (ex. Valium, Xanax), Benzodiazepine Analogs (ex. Clonazolam, Diclazipam), or Barbiturates (ex. Phenobarbital, Amobarbital). These side effects include, but are not limited to, decrease in breathing ability and blood pressure as well as death. Use the above Drug Interaction Checker and ask a qualified health professional before combining.</li>
+  </ul>
+
+</template>
