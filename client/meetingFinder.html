@@ -10,6 +10,7 @@
   </ul>
 
   {{>NA_Info}}
+  {{>CDA_Info}}
 
   <!-- https://www.na.org/meetingsearch/search-by-state.php?state=AL&statename=[USA]%20Alabama -->
 
@@ -20,6 +21,43 @@
     <li><a href="http://store.samhsa.gov/shin/content//SMA13-4213/SMA13-4213.pdf">SAMHSA's Anger Management for Substance Abuse and MH Clients</a></li>
   </ul>
 
+</template>
+
+<template name="CDA_Info">
+  <h2>CDA Meeting Finder</h2>
+  {{#if meetingResults}}
+    <table>
+      <thead>
+        <tr>
+          <th>General Location</th>
+          <th>Time</th>
+          <th>Name</th>
+          <th>Address</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each res in meetingResults}}
+            {{#each info in res.[1]}}
+              <tr>
+                <td>{{res.[0]}}</td>
+                <td>{{info.[0]}}</td>
+                <td>{{info.[1]}}</td>
+                <td>{{info.[2]}}</td>
+              </tr>
+            {{/each}}
+        {{/each}}
+      </tbody>
+    </table>
+    Source: <a href="http://www.na.org/meetingsearch/" class="external-link">NA Meeting Search</a>
+
+    If there are no results close to you please try <a href="http://www.na.org/meetingsearch/" target="_blank">NA Meeting Search</a> directly.
+  {{else}}
+    <div>
+      <p>
+        No Results. Try <a href="http://www.na.org/meetingsearch/" target="_blank">NA's website</a>.
+      </p>
+    </div>
+  {{/if}}
 </template>
 
 <template name="NA_Info">

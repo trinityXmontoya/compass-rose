@@ -119,6 +119,41 @@ var NAMeetingStateVals = [
 	"Wyoming"
 ]
 
+Template.CDA_Info.onCreated(function(){
+	var _this = this
+	this.currentMeetingResults = new ReactiveVar(null);
+
+	var url = "http://cdawebsitedev.com/meetings.html#"
+
+	var formatCDAMeetingResults = function(res){
+		var parser = new DOMParser();
+		var resTable = $(parser.parseFromString(res, "text/html")).find(".Accordion .AccordionPanel");
+		var results = _.map( resTable, function(panel){
+			return _.map(
+				{
+					location: $(panel).find(".AccordionPanelTab").text(),
+					results: _.map($(panel).find("li"), function(li){ return li.innerHTML.split("<br>")})
+				}
+			)
+		});
+		_this.currentMeetingResults.set(results)
+	};
+
+	$.ajax({
+		url: url,
+		type: 'GET',
+		headers: {
+				"Access-Control-Allow-Origin": "*"
+		},
+		success: function(data) {
+			formatCDAMeetingResults(data)
+		},
+		error: function(xhr, status, err) {
+			console.error(status, err.toString());
+		}
+	});
+})
+
 Template.NA_Meeting_Search.onCreated(function(){
 	this.currentMeetingResultsUrl = new ReactiveVar(null);
 })
@@ -168,6 +203,12 @@ Template.NA_Helplines.helpers({
 Template.NA_Meeting_Search.helpers({
 	meetingResultsUrl(){
 		return Template.instance().currentMeetingResultsUrl.get()
+	}
+});
+
+Template.CDA_Info.helpers({
+	meetingResults(){
+		return Template.instance().currentMeetingResults.get()
 	}
 });
 
