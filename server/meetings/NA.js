@@ -1,5 +1,5 @@
 import cheerio from 'cheerio'
-import "./meetings.js";
+import "./meeting.js";
 
 Meetings.NA.formatContactInfo = function(str) {
   var arr = _.split(str, "http")
@@ -16,6 +16,7 @@ Meetings.NA.formatContactInfo = function(str) {
 };
 
 Meetings.NA.getHelplines = function(state){
+  console.log("im being called")
   var url = "http://www.na.org/meetingsearch/search-by-state.php?state=" + state
   var html = HTTP.get(url).content
   $ = cheerio.load(html, {normalizeWhitespace: true})

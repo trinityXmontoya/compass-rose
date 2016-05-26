@@ -22,3 +22,5 @@ kadira:flow-router
 kadira:blaze-layout
 erasaur:meteor-lodash
 http
+zodiase:mdl
+reactive-dict

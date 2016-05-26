@@ -3,38 +3,59 @@
 
   <p>Find Narcotics Anonymous (NA), Alcholics Anonymous (AA), Chemically Dependent Anonymous (CDA), and SMART Recovery Meetings with this one simple tool!</p>
 
-  <form id="meeting-finder-location-entry">
-    <input type="text" name="city" placeholder="City">
-    <input type="text" name="state" placeholder="State">
-    <input type="submit" value="Search">
+  <form action="#" id="meeting-finder-location-entry">
+    <div class="mdl-textfield mdl-js-textfield">
+      <input class="mdl-textfield__input" type="text" id="meeting-finder-form-city" name="city">
+      <label class="mdl-textfield__label" for="meeting-finder-form-city">City</label>
+    </div>
+    <br>
+    <div class="mdl-textfield mdl-js-textfield">
+      <input class="mdl-textfield__input" type="text" id="meeting-finder-form-state" name="state">
+      <label class="mdl-textfield__label" for="meeting-finder-form-state">State</label>
+    </div>
+    <br>
+    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+      Search
+    </button>
   </form>
 
-  <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
-    <thead>
-      <tr>
-        <th class="mdl-data-table__cell--non-numeric">Material</th>
-        <th>Quantity</th>
-        <th>Unit price</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="mdl-data-table__cell--non-numeric">Acrylic (Transparent)</td>
-        <td>25</td>
-        <td>$2.90</td>
-      </tr>
-      <tr>
-        <td class="mdl-data-table__cell--non-numeric">Plywood (Birch)</td>
-        <td>50</td>
-        <td>$1.25</td>
-      </tr>
-      <tr>
-        <td class="mdl-data-table__cell--non-numeric">Laminate (Gold on Blue)</td>
-        <td>10</td>
-        <td>$2.35</td>
-      </tr>
-    </tbody>
-  </table>
+  {{#if searching}}
+    <div id="p2" class="mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>
+  {{else}}
+    {{#if searchResults}}
+      <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+        <thead>
+          <tr>
+            <th class="mdl-data-table__cell--non-numeric">Source</th>
+            <th class="mdl-data-table__cell--non-numeric">Name</th>
+            <th class="mdl-data-table__cell--non-numeric">Address</th>
+            <th class="mdl-data-table__cell--non-numeric">Time</th>
+            <th class="mdl-data-table__cell--non-numeric">Location</th>
+            <th class="mdl-data-table__cell--non-numeric">Contact</th>
+            <th class="mdl-data-table__cell--non-numeric">State</th>
+            <th class="mdl-data-table__cell--non-numeric">Country</th>
+            <th class="mdl-data-table__cell--non-numeric">Area Code</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each meeting in searchResults.meetings}}
+            <tr>
+              <td class="mdl-data-table">{{meeting.source}}</td>
+              <td class="mdl-data-table">{{meeting.name}}</td>
+              <td class="mdl-data-table">{{meeting.address}}</td>
+              <td class="mdl-data-table">{{meeting.time}}</td>
+              <td class="mdl-data-table">{{meeting.location}}</td>
+              <td class="mdl-data-table">{{{meeting.contact}}}</td>
+              <td class="mdl-data-table">{{meeting.state}}</td>
+              <td class="mdl-data-table">{{meeting.country}}</td>
+              <td class="mdl-data-table">{{meeting.areaCode}}</td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    {{/if}}
+  {{/if}}
+
 
 
   <div>
@@ -49,22 +70,22 @@
       </ul>
     </p>
   </div>
-
+<!--
   {{>NA_Info}}
   {{>CDA_Info}}
 
-  <!-- https://www.na.org/meetingsearch/search-by-state.php?state=AL&statename=[USA]%20Alabama -->
+https://www.na.org/meetingsearch/search-by-state.php?state=AL&statename=[USA]%20Alabama -->
 
 
-  Other Support
+  <!-- Other Support
   <ul>
     <li><a href="http://www.addictionsurvivors.org/vbulletin/forumdisplay.php?f=45">Addiction Survivors.org - Forum</a></li>
     <li><a href="http://store.samhsa.gov/shin/content//SMA13-4213/SMA13-4213.pdf">SAMHSA's Anger Management for Substance Abuse and MH Clients</a></li>
-  </ul>
+  </ul> -->
 
 </template>
 
-<template name="CDA_Info">
+<!-- <template name="CDA_Info">
   <h2>CDA Meeting Finder</h2>
   {{#if meetingResults}}
     <table>
@@ -180,4 +201,4 @@
     <iframe src="{{meetingResultsUrl}}" frameborder="0"></iframe>
   </div>
 
-</template>
+</template> -->

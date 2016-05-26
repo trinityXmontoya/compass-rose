@@ -1,5 +1,5 @@
 import cheerio from 'cheerio'
-import "./meetings.js";
+import "./meeting.js";
 
 Meetings.CDA.seed = function(){
   var url = "http://cdawebsitedev.com/meetings.html#"

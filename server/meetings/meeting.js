@@ -72,14 +72,26 @@ Meetings = {
   }
 }
 
-Meteor.publish("meetings.all", function(city, state){
+MeetingsByState = new Mongo.Collection("MeetingsByState");
+
+Meteor.publish("meetings.all", function(location){
+  var state = location.state
+  var city = location.city
   console.log(state)
   if (!state){
-    return "false"
+    return this.ready()
   }
   else {
-    // Meetings.NA.getHelplines(state)
-    console.log(Meetings.CDA.filter(state))
+    var existingMeetings = MeetingsByState.find({state: "test1"})
+    if (existingMeetings.count() > 0){
+      return existingMeetings
+    }
+    else {
+      MeetingsByState.insert({
+        state: "test1",
+        meetings: Meetings.NA.getHelplines(state)
+      })
+    }
   }
 })
 
