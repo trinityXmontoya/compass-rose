@@ -180,6 +180,7 @@ Session_MeetingFinder_Searching = new ReactiveVar(false)
 Session_MeetingFinder_Location = new ReactiveVar(null)
 
 Template.MeetingFinder.onCreated(function(){
+	Session_MeetingFinder_Location.set(null)
 	this.autorun(()=> {
 		if (Session_MeetingFinder_Location.get()){
 			var searchHandle = Meteor.subscribe("meetings.all", Session_MeetingFinder_Location.get());

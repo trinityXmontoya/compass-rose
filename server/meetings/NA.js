@@ -10,7 +10,7 @@ Meetings.NA.formatContactInfo = function(str) {
   }
   if (website) {
     url = "http" + website
-    arr[1] = "<a href='"+ url + "'>" + url + "</a>"
+    arr[1] = "<a href='"+ url + "' class='external-link'>" + url + "</a>"
   }
   return arr.join(" ")
 };
