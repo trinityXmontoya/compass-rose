@@ -33,6 +33,12 @@
   background-position: center center;
 }
 
+#pdf-viewer-container {
+  width: 100%;
+  height: 100%;
+  display: none
+}
+
 
 /**
  * Copyright 2015 Google Inc. All Rights Reserved.

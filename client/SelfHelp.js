@@ -1,31 +1,4 @@
-import pdfjs from 'pdfjs-dist'
-
-var url = "../public/matrix.pdf#page=39"
-pdfjs.workerSrc = "../node_modules/pdfjs-dist/build/pdf.worker.js";
-pdfjs.getDocument(url).then(function getPdfHelloWorld(pdf) {
-    //
-    // Fetch the first page
-    //
-    pdf.getPage(1).then(function getPageHelloWorld(page) {
-      var scale = 1.5;
-      var viewport = page.getViewport(scale);
-      //
-      // Prepare canvas using PDF page dimensions
-      //
-      var canvas = document.getElementById('the-canvas');
-      var context = canvas.getContext('2d');
-      canvas.height = viewport.height;
-      canvas.width = viewport.width;
-      //
-      // Render PDF page into canvas context
-      //
-      var renderContext = {
-        canvasContext: context,
-        viewport: viewport
-      };
-      page.render(renderContext);
-    });
-  });
+import PDFObject from "./vendor/pdfobject.min.js"
 
 var SelfHelpResources = [
     {title: "Alcohol", page_begin: 39 , page_end: 40},
@@ -45,6 +18,20 @@ var SelfHelpResources = [
     {title: "Self-Care", page_begin: 70 , page_end: 70},
     {title: "Stress", page_begin: 78 , page_end: 79}
 ]
+
+Template.SelfHelp.events({
+  "click a.self-help-resource" (evt, instance){
+    var pageNum = evt.currentTarget.dataset.pgnum
+    var url = "/matrix.pdf#page=" + pageNum
+
+    if(PDFObject.supportsPDFs){
+       PDFObject.embed(url, "#pdf-viewer")
+    } else {
+      $("#pdf-viewer").text("Inline PDFS are not supported by this browser, visit link here")
+    }
+    $("#pdf-viewer-container").show()
+  },
+})
 
 Template.SelfHelp.helpers({
   resources() {
