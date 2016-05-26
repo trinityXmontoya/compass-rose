@@ -5,15 +5,8 @@
 
   <form action="#" id="meeting-finder-location-entry">
     <div class="mdl-textfield mdl-js-textfield">
-      <input class="mdl-textfield__input" type="text" id="meeting-finder-form-city" name="city">
-      <label class="mdl-textfield__label" for="meeting-finder-form-city">City</label>
-    </div>
-    <br>
-    <div class="mdl-textfield mdl-js-textfield">
       <select id="meeting-finder-form-state" name="state">
-        {{#each state in stateOpts}}
-          <option value="{{state.val}}">{{state.label}}</option>
-        {{/each}}
+        {{>StateSelectOptions}}
       </select>
       <label class="mdl-textfield__label" for="meeting-finder-form-state">State</label>
     </div>
@@ -26,37 +19,41 @@
   {{#if searching}}
     <div id="p2" class="mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>
   {{else}}
-    {{#if searchResults}}
+    {{#if searchResults.count}}
       <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
         <thead>
           <tr>
             <th class="mdl-data-table__cell--non-numeric">Source</th>
             <th class="mdl-data-table__cell--non-numeric">Name</th>
-            <th class="mdl-data-table__cell--non-numeric">Address</th>
             <th class="mdl-data-table__cell--non-numeric">Time</th>
             <th class="mdl-data-table__cell--non-numeric">Location</th>
             <th class="mdl-data-table__cell--non-numeric">Contact</th>
+            <th class="mdl-data-table__cell--non-numeric">Phone</th>
+            <th class="mdl-data-table__cell--non-numeric">City</th>
             <th class="mdl-data-table__cell--non-numeric">State</th>
-            <th class="mdl-data-table__cell--non-numeric">Country</th>
-            <th class="mdl-data-table__cell--non-numeric">Area Code</th>
+            <th class="mdl-data-table__cell--non-numeric">Area</th>
+            <th class="mdl-data-table__cell--non-numeric">Additional Info</th>
           </tr>
         </thead>
         <tbody>
-          {{#each meeting in searchResults.meetings}}
+          {{#each meeting in searchResults}}
             <tr>
               <td class="mdl-data-table">{{meeting.source}}</td>
               <td class="mdl-data-table">{{meeting.name}}</td>
-              <td class="mdl-data-table">{{meeting.address}}</td>
               <td class="mdl-data-table">{{meeting.time}}</td>
               <td class="mdl-data-table">{{meeting.location}}</td>
               <td class="mdl-data-table">{{{meeting.contact}}}</td>
+              <td class="mdl-data-table">{{{meeting.phone}}}</td>
+              <td class="mdl-data-table">{{meeting.city}}</td>
               <td class="mdl-data-table">{{meeting.state}}</td>
-              <td class="mdl-data-table">{{meeting.country}}</td>
-              <td class="mdl-data-table">{{meeting.areaCode}}</td>
+              <td class="mdl-data-table">{{meeting.area}}</td>
+              <td class="mdl-data-table">{{meeting.addlInfo}}</td>
             </tr>
           {{/each}}
         </tbody>
       </table>
+    {{else}}
+      <p>No results at this time for this state. Please use the below resources!</p>
     {{/if}}
   {{/if}}
 
@@ -67,10 +64,10 @@
       Sources:
 
       <ul>
-        <li><a href="http://www.na.org/meetingsearch/" >NA</a></li>
-        <li><a href="http://www.aa.org/pages/en_US/find-aa-resources" >AA</a></li>
-        <li><a href="http://cdawebsitedev.com/meetings.html#" >CDA</a></li>
-        <li><a href="http://www.smartrecovery.org/meetings_db/view/" >SMART Recovery</a></li>
+        <li><a href="http://www.na.org/meetingsearch/">Narcotics Anonymous - NA</a></li>
+        <li><a href="http://www.aa.org/pages/en_US/find-aa-resources">Alcoholics Anonymous - AA</a></li>
+        <li><a href="http://cdawebsitedev.com/meetings.html#">Chemically Dependent Anonymous - CDA</a></li>
+        <li><a href="http://www.smartrecovery.org/meetings_db/view/">SMART Recovery</a></li>
       </ul>
     </p>
   </div>
