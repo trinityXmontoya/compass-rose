@@ -24,3 +24,17 @@ FlowRouter.route('/toolbox', {
     BlazeLayout.render("Layout", {content: "Toolbox"});
   }
 });
+
+FlowRouter.route('/self-help', {
+  name: 'SelfHelp.show',
+  action: function() {
+    BlazeLayout.render("Layout", {content: "SelfHelp"});
+  }
+});
+
+FlowRouter.route('/stories', {
+  name: 'Stories.show',
+  action: function() {
+    BlazeLayout.render("Layout", {content: "Stories"});
+  }
+});

@@ -87,7 +87,7 @@ Meteor.publish("meetings.all", function(location){
       return existingMeetings
     }
     else {
-      MeetingsByState.insert({
+      return MeetingsByState.insert({
         state: "test1",
         meetings: Meetings.NA.getHelplines(state)
       })

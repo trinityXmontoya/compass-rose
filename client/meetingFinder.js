@@ -1,69 +1,69 @@
-// var NAHelplineStateVals = [
-// 	{val: "AL", label: "[USA] Alabama"},
-//   {val: "AK", label: "[USA] Alaska"},
-//   {val: "AZ", label: "[USA] Arizona"},
-//   {val: "AR", label: "[USA] Arkansas"},
-//   {val: "CA", label: "[USA] California"},
-//   {val: "CO", label: "[USA] Colorado"},
-//   {val: "CT", label: "[USA] Connecticut"},
-//   {val: "DE", label: "[USA] Delaware"},
-//   {val: "DC", label: "[USA] District of Columbia"},
-//   {val: "FL", label: "[USA] Florida"},
-//   {val: "GA", label: "[USA] Georgia"},
-//   {val: "HI", label: "[USA] Hawaii"},
-//   {val: "ID", label: "[USA] Idaho"},
-//   {val: "IL", label: "[USA] Illinois"},
-//   {val: "IN", label: "[USA] Indiana"},
-//   {val: "IA", label: "[USA] Iowa"},
-//   {val: "KS", label: "[USA] Kansas"},
-//   {val: "KY", label: "[USA] Kentucky"},
-//   {val: "LA", label: "[USA] Louisiana"},
-//   {val: "ME", label: "[USA] Maine"},
-//   {val: "MD", label: "[USA] Maryland"},
-//   {val: "MA", label: "[USA] Massachusetts"},
-//   {val: "MI", label: "[USA] Michigan"},
-//   {val: "MN", label: "[USA] Minnesota"},
-//   {val: "MS", label: "[USA] Mississippi"},
-//   {val: "MO", label: "[USA] Missouri"},
-//   {val: "MT", label: "[USA] Montana"},
-//   {val: "NE", label: "[USA] Nebraska"},
-//   {val: "NV", label: "[USA] Nevada"},
-//   {val: "NH", label: "[USA] New Hampshire"},
-//   {val: "NJ", label: "[USA] New Jersey"},
-//   {val: "NM", label: "[USA] New Mexico"},
-//   {val: "NY", label: "[USA] New York"},
-//   {val: "NC", label: "[USA] North Carolina"},
-//   {val: "ND", label: "[USA] North Dakota"},
-//   {val: "OH", label: "[USA] Ohio"},
-//   {val: "OK", label: "[USA] Oklahoma"},
-//   {val: "OR", label: "[USA] Oregon"},
-//   {val: "PA", label: "[USA] Pennsylvania"},
-//   {val: "RI", label: "[USA] Rhode Island"},
-//   {val: "SC", label: "[USA] South Carolina"},
-//   {val: "SD", label: "[USA] South Dakota"},
-//   {val: "TN", label: "[USA] Tennessee"},
-//   {val: "TX", label: "[USA] Texas"},
-//   {val: "UT", label: "[USA] Utah"},
-//   {val: "VT", label: "[USA] Vermont"},
-//   {val: "VA", label: "[USA] Virginia"},
-//   {val: "WA", label: "[USA] Washington"},
-//   {val: "WV", label: "[USA] West Virginia"},
-//   {val: "WI", label: "[USA] Wisconsin"},
-//   {val: "WY", label: "[USA] Wyoming"},
-//   {val: "NF", label: "[Canada] "},
-//   {val: "AB", label: "[Canada] Alberta"},
-//   {val: "BC", label: "[Canada] British Columbia"},
-//   {val: "MB", label: "[Canada] Manitoba"},
-//   {val: "NB", label: "[Canada] New Brunswick"},
-//   {val: "NL", label: "[Canada] Newfoundland &amp; Labrador"},
-//   {val: "NT", label: "[Canada] Northern Territories"},
-//   {val: "NS", label: "[Canada] Nova Scotia"},
-//   {val: "NU", label: "[Canada] Nunavut"},
-//   {val: "ON", label: "[Canada] Ontario"},
-//   {val: "PE", label: "[Canada] Prince Edward Island"},
-//   {val: "QC", label: "[Canada] Quebec"},
-//   {val: "SK", label: "[Canada] Saskatchewan"},
-//   {val: "YK", label: "[Canada] Yukon Territory"}]
+var stateOpts = [
+	{val: "AL", label: "[USA] Alabama"},
+  {val: "AK", label: "[USA] Alaska"},
+  {val: "AZ", label: "[USA] Arizona"},
+  {val: "AR", label: "[USA] Arkansas"},
+  {val: "CA", label: "[USA] California"},
+  {val: "CO", label: "[USA] Colorado"},
+  {val: "CT", label: "[USA] Connecticut"},
+  {val: "DE", label: "[USA] Delaware"},
+  {val: "DC", label: "[USA] District of Columbia"},
+  {val: "FL", label: "[USA] Florida"},
+  {val: "GA", label: "[USA] Georgia"},
+  {val: "HI", label: "[USA] Hawaii"},
+  {val: "ID", label: "[USA] Idaho"},
+  {val: "IL", label: "[USA] Illinois"},
+  {val: "IN", label: "[USA] Indiana"},
+  {val: "IA", label: "[USA] Iowa"},
+  {val: "KS", label: "[USA] Kansas"},
+  {val: "KY", label: "[USA] Kentucky"},
+  {val: "LA", label: "[USA] Louisiana"},
+  {val: "ME", label: "[USA] Maine"},
+  {val: "MD", label: "[USA] Maryland"},
+  {val: "MA", label: "[USA] Massachusetts"},
+  {val: "MI", label: "[USA] Michigan"},
+  {val: "MN", label: "[USA] Minnesota"},
+  {val: "MS", label: "[USA] Mississippi"},
+  {val: "MO", label: "[USA] Missouri"},
+  {val: "MT", label: "[USA] Montana"},
+  {val: "NE", label: "[USA] Nebraska"},
+  {val: "NV", label: "[USA] Nevada"},
+  {val: "NH", label: "[USA] New Hampshire"},
+  {val: "NJ", label: "[USA] New Jersey"},
+  {val: "NM", label: "[USA] New Mexico"},
+  {val: "NY", label: "[USA] New York"},
+  {val: "NC", label: "[USA] North Carolina"},
+  {val: "ND", label: "[USA] North Dakota"},
+  {val: "OH", label: "[USA] Ohio"},
+  {val: "OK", label: "[USA] Oklahoma"},
+  {val: "OR", label: "[USA] Oregon"},
+  {val: "PA", label: "[USA] Pennsylvania"},
+  {val: "RI", label: "[USA] Rhode Island"},
+  {val: "SC", label: "[USA] South Carolina"},
+  {val: "SD", label: "[USA] South Dakota"},
+  {val: "TN", label: "[USA] Tennessee"},
+  {val: "TX", label: "[USA] Texas"},
+  {val: "UT", label: "[USA] Utah"},
+  {val: "VT", label: "[USA] Vermont"},
+  {val: "VA", label: "[USA] Virginia"},
+  {val: "WA", label: "[USA] Washington"},
+  {val: "WV", label: "[USA] West Virginia"},
+  {val: "WI", label: "[USA] Wisconsin"},
+  {val: "WY", label: "[USA] Wyoming"},
+  {val: "NF", label: "[Canada] "},
+  {val: "AB", label: "[Canada] Alberta"},
+  {val: "BC", label: "[Canada] British Columbia"},
+  {val: "MB", label: "[Canada] Manitoba"},
+  {val: "NB", label: "[Canada] New Brunswick"},
+  {val: "NL", label: "[Canada] Newfoundland &amp; Labrador"},
+  {val: "NT", label: "[Canada] Northern Territories"},
+  {val: "NS", label: "[Canada] Nova Scotia"},
+  {val: "NU", label: "[Canada] Nunavut"},
+  {val: "ON", label: "[Canada] Ontario"},
+  {val: "PE", label: "[Canada] Prince Edward Island"},
+  {val: "QC", label: "[Canada] Quebec"},
+  {val: "SK", label: "[Canada] Saskatchewan"},
+  {val: "YK", label: "[Canada] Yukon Territory"}]
 //
 // var NAMeetingStateVals = [
 // 	"Alabama",
@@ -195,13 +195,15 @@ Template.MeetingFinder.events({
 		var state = evt.currentTarget.state.value
 		var city = evt.currentTarget.city.value
 		if (state && city){
-			console.log(state, city)
 			Session_MeetingFinder_Location.set({city: city, state: state})
 		}
+		evt.currentTarget.state.value = ""
+		evt.currentTarget.city.value = ""
 	}
 })
 
 Template.MeetingFinder.helpers({
+	stateOpts: function(){ return stateOpts},
 	searching: function(){ return Session_MeetingFinder_Searching.get()},
 	searchResults: function(){
 		return MeetingsByState.findOne({state: "test1"})
@@ -209,12 +211,13 @@ Template.MeetingFinder.helpers({
 })
 //
 
-// Template.NA_Meeting_Search.onRendered(function () {
-// 	$("#na-meeting-finder-chosen").chosen({
-//     inherit_select_classes: true,
-//     max_selected_options: 1
-//   });
-// });
+Template.MeetingFinder.onRendered(function () {
+	$("select#meeting-finder-form-state").chosen({
+    inherit_select_classes: true,
+    max_selected_options: 1
+  });
+});
+
 //
 // Template.NA_Helplines.onRendered(function () {
 //   $("#na-helpline-finder-chosen").chosen({

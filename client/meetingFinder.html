@@ -10,7 +10,11 @@
     </div>
     <br>
     <div class="mdl-textfield mdl-js-textfield">
-      <input class="mdl-textfield__input" type="text" id="meeting-finder-form-state" name="state">
+      <select id="meeting-finder-form-state" name="state">
+        {{#each state in stateOpts}}
+          <option value="{{state.val}}">{{state.label}}</option>
+        {{/each}}
+      </select>
       <label class="mdl-textfield__label" for="meeting-finder-form-state">State</label>
     </div>
     <br>
