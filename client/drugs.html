@@ -12,13 +12,13 @@
 
 <template name="Drugs_info">
 
-  <div class="mdl-tabs__panel is-active fixed-tab-content" id="fixed-tab-{{drug.name}}">
+  <div class="mdl-tabs__panel is-active fixed-tab-content" id="fixed-tab-{{drug.name}}" style="margin: 5% 0;">
 
     <!-- INFO -->
     <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
       <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white"
               style="background-image:url('images/pillbox-{{drug.name}}.jpg');background-size:contain">
-        <i class="material-icons">play_circle_filled</i>
+        <i class="material-icons">info</i>
       </header>
       <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
         <div class="mdl-card__supporting-text">
@@ -49,28 +49,39 @@
 
     <!-- OTHER DRUGS -->
     <section class="section--center mdl-grid">
+      <!-- GOODRX -->
       <div class="mdl-card mdl-cell mdl-cell--6-col mdl-shadow--2dp">
-        <div id="goodrx_low-price_widget"> </div>
-        <div class="mdl-card__actions mdl-card--border">
+        <div id="goodrx_low-price_widget">
+          <div class="drug-info-loading-spinner"><div class="mdl-spinner mdl-js-spinner is-active"></div></div>
+        </div>
+        <div class="mdl-card__actions mdl-card--border" style="    bottom: 0;
+    position: absolute;
+    background: white;">
           <a href="http://www.goodrx.com/{{drug.name}}" target="_blank" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-            GoodRX - #1 medical app for iOS and Android
+            GoodRX - #1 iOS & Android Medical App
           </a>
         </div>
       </div>
-      <div class="mdl-card mdl-cell mdl-cell--6-col mdl-shadow--2dp">
+      <!-- DRUG INTERACTIONS -->
+      <div class="mdl-card mdl-cell mdl-cell--6-col mdl-shadow--2dp" style="    background: rgb(255,110,64);">
         <div class="mdl-card__title">
-          <h2 class="mdl-card__title-text">Interactions with other Drugs</h2>
+          <h2 class="mdl-card__title-text">Interactions with other Drugs </h2>
         </div>
         <div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
           <i class="material-icons">warning</i>WARNING
           <br>
-          Benzodiazepines (Valium, Xanax) | Benzodiazepine Analogs (Clonazolam, Diclazipam) | Barbiturates (Phenobarbital, Amobarbital)
+
+          <ul>
+            <li>Benzodiazepines (Valium, Xanax)</li>
+            <li>Benzodiazepine Analogs (Clonazolam, Diclazipam)</li>
+            <li>Barbiturates (Phenobarbital, Amobarbital)</li>
+          </ul>
           <br>
           There are potentially adverse effects of these combinations.
           These side effects include, but are not limited to, decrease in breathing ability and blood pressure as well as death.
-          Use a <a href="{{drug.interactionCheckerLink}}" target="_blank">Drug Interaction Checker</a> and ask a qualified health professional before using.
+          Use a <a href="{{drug.interactionCheckerLink}}" target="_blank" style="color:black">Drug Interaction Checker</a> and ask a qualified health professional before using.
         </div>
-        <div id="medscape-interaction-checker" class="mdl-card__actions">
+        <div id="medscape-interaction-checker" class="mdl-card__actions" style="    background: white;">
           <a href="http://www.webmd.com/my-medicine/default.htm#add/{{drug.webMdChecker}}/current/" target="_blank" class="mdl-button">WebMD Medication Checker</a>
         </div>
       </div>
