@@ -43,3 +43,10 @@ FlowRouter.route('/stories', {
     BlazeLayout.render("Layout", {content: "Stories"});
   }
 });
+
+FlowRouter.route('/credits', {
+  name: 'Credits.show',
+  action: function() {
+    BlazeLayout.render("Layout", {content: "Credits"});
+  }
+});
