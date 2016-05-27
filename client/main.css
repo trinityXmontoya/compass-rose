@@ -1,6 +1,9 @@
 /* CSS declarations go here */
 
-
+#goodrx_low-price_widget {
+  display: flex;
+  height: auto;
+}
 
 
 .drug-interaction-samples {
