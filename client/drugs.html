@@ -1,17 +1,18 @@
 <template name="Drugs">
   <!-- Tabs -->
-  <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
-    <a href="#fixed-tab-methadone" class="mdl-layout__tab is-active drug" data-value="methadone">Methadone</a>
-    <a href="#fixed-tab-buprenorphine" class="mdl-layout__tab drug" data-value="buprenorphine">Buprenorphine</a>
-    <a href="#fixed-tab-naltrexone" class="mdl-layout__tab drug" data-value="naltrexone">Naltrexone</a>
+  <div class="mdl-tabs">
+    <div class="mdl-tabs__tab-bar">
+      <a href="#fixed-tab-methadone" class="mdl-tabs__tab is-active drug" data-value="methadone">Methadone</a>
+      <a href="#fixed-tab-buprenorphine" class="mdl-tabs__tab drug" data-value="buprenorphine">Buprenorphine</a>
+      <a href="#fixed-tab-naltrexone" class="mdl-tabs__tab drug" data-value="naltrexone">Naltrexone</a>
+    </div>
+    {{>Drugs_info drug=selection}}
   </div>
-
-  {{>Drugs_info drug=selection}}
 </template>
 
 <template name="Drugs_info">
 
-  <section class="mdl-layout__tab-panel is-active" id="fixed-tab-{{drug.name}}">
+  <div class="mdl-tabs__panel is-active" id="fixed-tab-{{drug.name}}">
 
     <!-- INFO -->
     <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
@@ -70,7 +71,6 @@
           Use a <a href="{{drug.interactionCheckerLink}}" target="_blank">Drug Interaction Checker</a> and ask a qualified health professional before using.
         </div>
         <div id="medscape-interaction-checker" class="mdl-card__actions">
-          <!-- <a href="{{drug.interactionCheckerLink}}" target="_blank" class="mdl-button">Medscape Interaction Checker for {{drug.name}}</a> -->
           <a href="http://www.webmd.com/my-medicine/default.htm#add/{{drug.webMdChecker}}/current/" target="_blank" class="mdl-button">WebMD Medication Checker</a>
         </div>
       </div>
@@ -99,5 +99,5 @@
       </div>
     </section>
 
-  </section>
+  </div>
 </template>

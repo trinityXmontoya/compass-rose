@@ -77,12 +77,13 @@ Template.Drugs.onRendered(function(){
 })
 
 Template.Drugs.onCreated(function () {
-  this.currentSelection = new ReactiveVar(null);
-  Template.instance().currentSelection.set("methadone")
+  this.currentSelection = new ReactiveVar("methadone");
+  // Template.instance().currentSelection.set("methadone")
 });
 
 Template.Drugs.events({
   'click a.drug' (evt, instance) {
+    console.log(instance)
     drug = evt.currentTarget.dataset.value
     instance.currentSelection.set(info[drug]);
     loadGoodRXWidget(drug)
