@@ -20,7 +20,7 @@
     /*padding: 80px 56px;*/
     margin-bottom: 80px;
     width: 612px;
-    height: 792px;
+    height: 802px;
   }
 
   .layout.is-small-screen .content {
@@ -29,6 +29,13 @@
 
   .content h3 {
     margin-top: 48px;
+  }
+
+  .doc-viewer-bar {
+    bottom: 0;
+position: absolute;
+background: grey;
+width: 100%;
   }</style>
 
 
@@ -36,19 +43,88 @@
     <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
     <div style="position:relative" class="content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
       <div style="overflow:hidden">
-        {{>page0}}
+        {{> Template.dynamic template=currentPageSelection}}
       </div>
+
+
+
+      <div class="doc-viewer-bar">
+
+        <button data-pg="0" class="toc-list-item mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
+  <i class="material-icons">home</i>
+</button>
+
+
+<div class="doc-viewer-tab-center-actions" style="position:absolute;bottom:0;right:0">
+        <button data-dir="-1" class="doc-viewer-btn mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
+  <i class="material-icons">arrow_back</i>
+</button>
+
+
+
+
+<button data-dir="1" class="doc-viewer-btn mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
+  <i class="material-icons">arrow_forward</i>
+</button>
+</div>
+
+<button class=" mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored" style=" ">
+  <i class="material-icons">download</i>
+</button>
+
+{{currentPageSelection}}
+      </div>
+
     </div>
+
+
   </div>
 
 </template>
 
-<template name="page0">
-  Select Excerpt (2-3, 11-38) from the <a href="http://www.methadone.us/matrix.pdf">Client’s Handbook - Matrix Intensive Outpatient Treatment for People With Stimulant Use Disorders</a>
+<template name="0">
+  <div>
+    <h3>Recovery Worksheet</h3>
+    <p>
+      Fill out and saves pages locally to share with friends, family, or your doctor!
+      <br>
+      Select Excerpt (2-3, 11-38) from the <a href="http://www.methadone.us/matrix.pdf" target="_blank">Client’s Handbook - Matrix Intensive Outpatient Treatment for People With Stimulant Use Disorders</a>
+      <br>
+      <p>
+        <h5>Table of Contents</h5>
+        <ul>
+          <li class="toc-list-item" data-pg="1"><a href="">Cover</a></li>
+          <li class="toc-list-item" data-pg="2"><a href="">Acknowledgements</a></li>
+          <li class="toc-list-item" data-pg="3"><a href="">The Importance of Scheduling</a></li>
+          <li class="toc-list-item" data-pg="4"><a href="">Daily/Hourly Schedule</a></li>
+          <li class="toc-list-item" data-pg="5"><a href="">Marking Progress</a></li>
+          <li class="toc-list-item" data-pg="6"><a href="">Calendar</a></li>
+          <li class="toc-list-item" data-pg="7"><a href="">Triggers</a></li>
+          <li class="toc-list-item" data-pg="8"><a href="">Trigger–Thought–Craving–Use</a></li>
+          <li class="toc-list-item" data-pg="9"><a href="">Thought-Stopping Techniques</a></li>
+          <li class="toc-list-item" data-pg="11"><a href="">ExternalTriggerQuestionnaire</a></li>
+          <li class="toc-list-item" data-pg="12"><a href="">External Trigger Chart</a></li>
+          <li class="toc-list-item" data-pg="13"><a href="">Internal Trigger Questionnaire</a></li>
+          <li class="toc-list-item" data-pg="14"><a href="">Internal Trigger Chart</a></li>
+          <li class="toc-list-item" data-pg="15"><a href="">12-Step Introduction</a></li>
+          <li class="toc-list-item" data-pg="20"><a href="">The Serenity Prayer and the 12 Steps of Alcoholics Anonymous</a></li>
+          <li class="toc-list-item" data-pg="21"><a href="">RoadmapforRecovery</a></li>
+          <li class="toc-list-item" data-pg="24"><a href="">Five Common Challenges in Early Recovery</a></li>
+          <li class="toc-list-item" data-pg="26"><a href="">Alcohol Arguments</a></li>
+          <li class="toc-list-item" data-pg="27"><a href="">Thoughts, Emotions, and Behavior</a></li>
+          <li class="toc-list-item" data-pg="28"><a href="">Addictive Behavior</a></li>
+          <li class="toc-list-item" data-pg="29"><a href="">12-Step Sayings</a></li>
+          <li class="toc-list-item" data-pg="31"><a href="">External Resources</a></li>
+        </ul>
+      </p>
+
+    </p>
+
+  </div>
 </template>
 
-<template name="page1">
-  <div style="position:absolute;left:0px;top:0px"><img src="6aec7fd6-23a1-11e6-94e3-002590d31986_id_matrix_files/background002.jpg" width=612 height=792></div>
+<template name="1">
+  <div style="position:absolute;left:0px;top:0px"><img src="/images/pdf-bg-1.jpg" width="612" height="792"></div>
   <div style="position:absolute;left:145.68px;top:108.96px" class="cls_002"><span class="cls_002">Client’s Handbook</span></div>
   <div style="position:absolute;left:92.64px;top:277.92px" class="cls_003"><span class="cls_003">Matrix Intensive Outpatient Treatment for</span></div>
   <div style="position:absolute;left:118.32px;top:312.00px" class="cls_003"><span class="cls_003">People With Stimulant Use Disorders</span></div>
@@ -59,9 +135,9 @@
   <div style="position:absolute;left:75.36px;top:680.40px" class="cls_005"><span class="cls_005">Rockville, MD 20857</span></div>
 </template>
 
-<template name="page2">
+<template name="2">
 <div style="position:absolute;left:0px;top:0px">
-<img src="6aec7fd6-23a1-11e6-94e3-002590d31986_id_matrix_files/background003.jpg" width=612 height=792></div>
+<img src="/images/pdf-bg-2.jpg" width="612" height="792"></div>
 <div style="position:absolute;left:38.16px;top:52.32px" class="cls_006"><span class="cls_006">Acknowledgments</span></div>
 <div style="position:absolute;left:38.16px;top:72.96px" class="cls_007"><span class="cls_007">Numerous people contributed to this document, which is part of the Methamphetamine Treatment Project (MTP).</span></div>
 <div style="position:absolute;left:38.16px;top:85.92px" class="cls_007"><span class="cls_007">The document was written by Jeanne L. Obert, M.F.T., M.S.M.; Richard A. Rawson, Ph.D.; Michael J. McCann, M.A.;</span></div>
@@ -108,9 +184,9 @@
 <div style="position:absolute;left:38.16px;top:702.24px" class="cls_007"><span class="cls_007">Printed 2006</span></div>
 </template>
 
-<template name="page3">
+<template name="3">
 <div style="position:absolute;left:0px;top:0px">
-<img src="6aec7fd6-23a1-11e6-94e3-002590d31986_id_matrix_files/background016.jpg" width=612 height=792></div>
+<img src="/images/pdf-bg-3.jpg" width="612" height="792"></div>
 <div style="position:absolute;left:212.40px;top:27.60px" class="cls_010"><span class="cls_010">The Importance</span></div>
 <div style="position:absolute;left:79.68px;top:33.12px" class="cls_010"><span class="cls_010">SCH 1</span></div>
 <div style="position:absolute;left:225.84px;top:61.68px" class="cls_010"><span class="cls_010">of Scheduling</span></div>
@@ -167,9 +243,9 @@
 <div style="position:absolute;left:557.52px;top:757.92px" class="cls_009"><span class="cls_009">11</span></div>
 </template>
 
-<template name="page4">
+<template name="4">
 <div style="position:absolute;left:0px;top:0px">
-<img src="6aec7fd6-23a1-11e6-94e3-002590d31986_id_matrix_files/background017.jpg" width=612 height=792></div>
+<img src="/images/pdf-bg-4.jpg" width="612" height="792"></div>
 <div style="position:absolute;left:46.80px;top:30.48px" class="cls_010"><span class="cls_010">SCH 2</span></div>
 <div style="position:absolute;left:198.24px;top:40.80px" class="cls_010"><span class="cls_010">Daily/Hourly Schedule</span></div>
 <div style="position:absolute;left:46.32px;top:132.72px" class="cls_013"><span class="cls_013">Date: <input type="text"> </span></div>
@@ -197,9 +273,9 @@
 <div style="position:absolute;left:37.20px;top:758.40px" class="cls_009"><span class="cls_009">12</span></div>
 </template>
 
-<template name="page5">
+<template name="5">
 <div style="position:absolute;left:0px;top:0px">
-<img src="6aec7fd6-23a1-11e6-94e3-002590d31986_id_matrix_files/background018.jpg" width=612 height=792></div>
+<img src="/images/pdf-bg-5.jpg" width="612" height="792"></div>
 <div style="position:absolute;left:83.04px;top:31.68px" class="cls_010"><span class="cls_010">CAL 1</span></div>
 <div style="position:absolute;left:208.80px;top:43.44px" class="cls_010"><span class="cls_010">Marking Progress</span></div>
 <div style="position:absolute;left:73.44px;top:123.84px" class="cls_014"><span class="cls_014">It is useful for both you and your counselor to know where you are in the recovery</span></div>
@@ -209,16 +285,16 @@
 <div style="position:absolute;left:145.44px;top:232.56px" class="cls_014"><span class="cls_014">have been abstinent.</span></div>
 <div style="position:absolute;left:109.44px;top:259.92px" class="cls_016"><span class="cls_016">*</span><span class="cls_014">    Recovery can seem very long unless you can measure your</span></div>
 <div style="position:absolute;left:145.44px;top:279.84px" class="cls_014"><span class="cls_014">progress in short units of time.</span></div>
-<div style="position:absolute;left:73.44px;top:321.36px" class="cls_014"><span class="cls_014">Make a mark to record on the calendar pages every day of abstinence you achieve.</span></div>
+<div style="position:absolute;left:73.44px;top:321.36px" class="cls_014"><span class="cls_014">Make a mark to record on the calendar s every day of abstinence you achieve.</span></div>
 <div style="position:absolute;left:73.44px;top:341.52px" class="cls_014"><span class="cls_014">You may decide to continue the exercise following the program.</span></div>
 <div style="position:absolute;left:73.44px;top:375.84px" class="cls_014"><span class="cls_014">If you record your abstinent days regularly, this simple procedure will help you and</span></div>
 <div style="position:absolute;left:73.44px;top:395.76px" class="cls_014"><span class="cls_014">your counselor see your progress.</span></div>
 <div style="position:absolute;left:557.52px;top:757.92px" class="cls_009"><span class="cls_009">13</span></div>
 </template>
 
-<template name="page6">
+<template name="6">
 <div style="position:absolute;left:0px;top:0px">
-<img src="6aec7fd6-23a1-11e6-94e3-002590d31986_id_matrix_files/background019.jpg" width=612 height=792></div>
+<img src="/images/pdf-bg-6.jpg" width="612" height="792"></div>
 <div style="position:absolute;left:48.00px;top:32.64px" class="cls_010"><span class="cls_010">CAL 2</span></div>
 <div style="position:absolute;left:243.84px;top:44.16px" class="cls_010"><span class="cls_010">Calendar</span></div>
 <div style="position:absolute;left:50.16px;top:130.32px" class="cls_013"><span class="cls_013">Month: <input type="text"></span></div>
@@ -291,9 +367,9 @@
 <div style="position:absolute;left:37.20px;top:758.40px" class="cls_009"><span class="cls_009">14</span></div>
 </template>
 
-<template name="page7">
+<template name="7">
 <div style="position:absolute;left:0px;top:0px">
-<img src="6aec7fd6-23a1-11e6-94e3-002590d31986_id_matrix_files/background020.jpg" width=612 height=792></div>
+<img src="/images/pdf-bg-7.jpg" width="612" height="792"></div>
 <div style="position:absolute;left:463.44px;top:35.04px" class="cls_011"><span class="cls_011">Trigger</span></div>
 <div style="position:absolute;left:77.28px;top:33.12px" class="cls_010"><span class="cls_010">ERS 1A</span></div>
 <div style="position:absolute;left:246.72px;top:44.40px" class="cls_010"><span class="cls_010">Triggers</span></div>
@@ -329,9 +405,9 @@
 <div style="position:absolute;left:557.52px;top:757.92px" class="cls_009"><span class="cls_009">15</span></div>
 </template>
 
-<template name="page8">
+<template name="8">
 <div style="position:absolute;left:0px;top:0px">
-<img src="6aec7fd6-23a1-11e6-94e3-002590d31986_id_matrix_files/background021.jpg" width=612 height=792></div>
+<img src="/images/pdf-bg-8.jpg" width="612" height="792"></div>
 <div style="position:absolute;left:41.04px;top:31.44px" class="cls_010"><span class="cls_010">ERS 1B</span></div>
 <div style="position:absolute;left:153.36px;top:43.92px" class="cls_010"><span class="cls_010">Trigger-Thought-Craving-Use</span></div>
 <div style="position:absolute;left:37.44px;top:121.92px" class="cls_017"><span class="cls_017">The Losing Argument</span></div>
@@ -361,9 +437,9 @@
 <div style="position:absolute;left:37.20px;top:758.40px" class="cls_009"><span class="cls_009">16</span></div>
 </template>
 
-<template name="page9">
+<template name="9">
 <div style="position:absolute;left:0px;top:0px">
-<img src="6aec7fd6-23a1-11e6-94e3-002590d31986_id_matrix_files/background022.jpg" width=612 height=792></div>
+<img src="/images/pdf-bg-9.jpg" width="612" height="792"></div>
 <div style="position:absolute;left:76.32px;top:30.24px" class="cls_010"><span class="cls_010">ERS 1C   Thought-Stopping</span></div>
 <div style="position:absolute;left:239.76px;top:62.16px" class="cls_010"><span class="cls_010">Techniques</span></div>
 <div style="position:absolute;left:73.44px;top:123.36px" class="cls_017"><span class="cls_017">A New Sequence</span></div>
@@ -390,9 +466,9 @@
 <div style="position:absolute;left:557.52px;top:757.92px" class="cls_009"><span class="cls_009">17</span></div>
 </template>
 
-<template name="page10">
+<template name="10">
 <div style="position:absolute;left:0px;top:0px">
-<img src="6aec7fd6-23a1-11e6-94e3-002590d31986_id_matrix_files/background023.jpg" width=612 height=792></div>
+<img src="/images/pdf-bg-10.jpg" width="612" height="792"></div>
 <div style="position:absolute;left:43.68px;top:31.68px" class="cls_010"><span class="cls_010">ERS 1C</span></div>
 <div style="position:absolute;left:165.60px;top:30.96px" class="cls_010"><span class="cls_010">Thought-Stopping</span></div>
 <div style="position:absolute;left:209.28px;top:62.88px" class="cls_010"><span class="cls_010">Techniques</span></div>
@@ -418,9 +494,9 @@
 <div style="position:absolute;left:269.04px;top:758.16px" class="cls_009"><span class="cls_009">2 of 2</span></div>
 </template>
 
-<template name="page11">
+<template name="11">
 <div style="position:absolute;left:0px;top:0px">
-<img src="6aec7fd6-23a1-11e6-94e3-002590d31986_id_matrix_files/background024.jpg" width=612 height=792></div>
+<img src="/images/pdf-bg-11.jpg" width="612" height="792"></div>
 <div style="position:absolute;left:233.52px;top:28.32px" class="cls_010"><span class="cls_010">External Trigger</span></div>
 <div style="position:absolute;left:73.44px;top:36.00px" class="cls_010"><span class="cls_010">ERS 2A</span></div>
 <div style="position:absolute;left:243.12px;top:62.40px" class="cls_010"><span class="cls_010">Questionnaire</span></div>
@@ -481,9 +557,9 @@
 <div style="position:absolute;left:557.52px;top:757.92px" class="cls_009"><span class="cls_009">19</span></div>
 </template>
 
-<template name="page12">
+<template name="12">
 <div style="position:absolute;left:0px;top:0px">
-<img src="6aec7fd6-23a1-11e6-94e3-002590d31986_id_matrix_files/background025.jpg" width=612 height=792></div>
+<img src="/images/pdf-bg-12.jpg" width="612" height="792"></div>
 <div style="position:absolute;left:42.00px;top:31.44px" class="cls_010"><span class="cls_010">ERS 2B</span></div>
 <div style="position:absolute;left:160.56px;top:42.00px" class="cls_010"><span class="cls_010">External Trigger Chart</span></div>
 <div style="position:absolute;left:37.44px;top:121.92px" class="cls_017"><span class="cls_017">Name: <input type="text">  Date:<input type="text"></span></div>
@@ -539,9 +615,9 @@
 <div style="position:absolute;left:37.20px;top:758.40px" class="cls_009"><span class="cls_009">20</span></div>
 </template>
 
-<template name="page13">
+<template name="13">
 <div style="position:absolute;left:0px;top:0px">
-<img src="6aec7fd6-23a1-11e6-94e3-002590d31986_id_matrix_files/background026.jpg" width=612 height=792></div>
+<img src="/images/pdf-bg-13.jpg" width="612" height="792"></div>
 <div style="position:absolute;left:240.24px;top:26.88px" class="cls_010"><span class="cls_010">Internal Trigger</span></div>
 <div style="position:absolute;left:78.72px;top:31.44px" class="cls_010"><span class="cls_010">ERS 3A</span></div>
 <div style="position:absolute;left:247.44px;top:60.96px" class="cls_010"><span class="cls_010">Questionnaire</span></div>
@@ -600,9 +676,9 @@
 <div style="position:absolute;left:557.52px;top:757.92px" class="cls_009"><span class="cls_009">21</span></div>
 </template>
 
-<template name="page14">
+<template name="14">
 <div style="position:absolute;left:0px;top:0px">
-<img src="6aec7fd6-23a1-11e6-94e3-002590d31986_id_matrix_files/background027.jpg" width=612 height=792></div>
+<img src="/images/pdf-bg-14.jpg" width="612" height="792"></div>
 <div style="position:absolute;left:44.88px;top:32.88px" class="cls_010"><span class="cls_010">ERS 3B</span></div>
 <div style="position:absolute;left:163.68px;top:44.88px" class="cls_010"><span class="cls_010">Internal Trigger Chart</span></div>
 <div style="position:absolute;left:37.44px;top:121.92px" class="cls_017"><span class="cls_017">Name: __________________________  Date:_________</span></div>
@@ -657,9 +733,9 @@
 <div style="position:absolute;left:37.20px;top:758.40px" class="cls_009"><span class="cls_009">22</span></div>
 </template>
 
-<template name="page15">
+<template name="15">
 <div style="position:absolute;left:0px;top:0px">
-<img src="6aec7fd6-23a1-11e6-94e3-002590d31986_id_matrix_files/background028.jpg" width=612 height=792></div>
+<img src="/images/pdf-bg-15.jpg" width="612" height="792"></div>
 <div style="position:absolute;left:77.28px;top:30.72px" class="cls_010"><span class="cls_010">ERS 4A</span></div>
 <div style="position:absolute;left:246.96px;top:28.80px" class="cls_010"><span class="cls_010">12-Step</span></div>
 <div style="position:absolute;left:218.40px;top:62.88px" class="cls_010"><span class="cls_010">Introduction</span></div>
@@ -692,9 +768,9 @@
 <div style="position:absolute;left:557.52px;top:757.92px" class="cls_009"><span class="cls_009">23</span></div>
 </template>
 
-<template name="page16">
+<template name="16">
 <div style="position:absolute;left:0px;top:0px">
-<img src="6aec7fd6-23a1-11e6-94e3-002590d31986_id_matrix_files/background029.jpg" width=612 height=792></div>
+<img src="/images/pdf-bg-16.jpg" width="612" height="792"></div>
 <div style="position:absolute;left:41.28px;top:32.16px" class="cls_010"><span class="cls_010">ERS 4A</span></div>
 <div style="position:absolute;left:233.52px;top:30.00px" class="cls_010"><span class="cls_010">12-Step</span></div>
 <div style="position:absolute;left:204.96px;top:64.08px" class="cls_010"><span class="cls_010">Introduction</span></div>
@@ -728,9 +804,9 @@
 <div style="position:absolute;left:269.04px;top:758.16px" class="cls_009"><span class="cls_009">2 of 5</span></div>
 </template>
 
-<template name="page17">
+<template name="17">
 <div style="position:absolute;left:0px;top:0px">
-<img src="6aec7fd6-23a1-11e6-94e3-002590d31986_id_matrix_files/background030.jpg" width=612 height=792></div>
+<img src="/images/pdf-bg-17.jpg" width="612" height="792"></div>
 <div style="position:absolute;left:78.96px;top:32.64px" class="cls_010"><span class="cls_010">ERS 4A</span></div>
 <div style="position:absolute;left:270.72px;top:30.72px" class="cls_010"><span class="cls_010">12-Step</span></div>
 <div style="position:absolute;left:242.16px;top:64.80px" class="cls_010"><span class="cls_010">Introduction</span></div>
@@ -761,9 +837,9 @@
 <div style="position:absolute;left:557.52px;top:757.92px" class="cls_009"><span class="cls_009">25</span></div>
 </template>
 
-<template name="page18">
+<template name="18">
 <div style="position:absolute;left:0px;top:0px">
-<img src="6aec7fd6-23a1-11e6-94e3-002590d31986_id_matrix_files/background031.jpg" width=612 height=792></div>
+<img src="/images/pdf-bg-18.jpg" width="612" height="792"></div>
 <div style="position:absolute;left:37.44px;top:31.20px" class="cls_010"><span class="cls_010">ERS 4A</span></div>
 <div style="position:absolute;left:231.60px;top:29.76px" class="cls_010"><span class="cls_010">12-Step</span></div>
 <div style="position:absolute;left:203.04px;top:63.84px" class="cls_010"><span class="cls_010">Introduction</span></div>
@@ -795,9 +871,9 @@
 <div style="position:absolute;left:269.04px;top:758.16px" class="cls_009"><span class="cls_009">4 of 5</span></div>
 </template>
 
-<template name="page19">
+<template name="19">
 <div style="position:absolute;left:0px;top:0px">
-<img src="6aec7fd6-23a1-11e6-94e3-002590d31986_id_matrix_files/background032.jpg" width=612 height=792></div>
+<img src="/images/pdf-bg-19.jpg" width="612" height="792"></div>
 <div style="position:absolute;left:75.12px;top:30.72px" class="cls_010"><span class="cls_010">ERS 4A</span></div>
 <div style="position:absolute;left:271.68px;top:30.24px" class="cls_010"><span class="cls_010">12-Step</span></div>
 <div style="position:absolute;left:243.12px;top:64.32px" class="cls_010"><span class="cls_010">Introduction</span></div>
@@ -835,9 +911,9 @@
 <div style="position:absolute;left:557.52px;top:757.92px" class="cls_009"><span class="cls_009">27</span></div>
 </template>
 
-<template name="page20">
+<template name="20">
 <div style="position:absolute;left:0px;top:0px">
-<img src="6aec7fd6-23a1-11e6-94e3-002590d31986_id_matrix_files/background033.jpg" width=612 height=792></div>
+<img src="/images/pdf-bg-20.jpg" width="612" height="792"></div>
 <div style="position:absolute;left:42.96px;top:30.24px" class="cls_010"><span class="cls_010">ERS 4B  The Serenity Prayer and the</span></div>
 <div style="position:absolute;left:188.88px;top:62.88px" class="cls_010"><span class="cls_010">12 Steps of Alcoholics</span></div>
 <div style="position:absolute;left:255.84px;top:94.80px" class="cls_010"><span class="cls_010">Anonymous</span></div>
@@ -887,9 +963,9 @@
 <div style="position:absolute;left:37.20px;top:758.40px" class="cls_009"><span class="cls_009">28</span></div>
 </template>
 
-<template name="page21">
+<template name="21">
 <div style="position:absolute;left:0px;top:0px">
-<img src="6aec7fd6-23a1-11e6-94e3-002590d31986_id_matrix_files/background034.jpg" width=612 height=792></div>
+<img src="/images/pdf-bg-21.jpg" width="612" height="792"></div>
 <div style="position:absolute;left:83.28px;top:31.20px" class="cls_010"><span class="cls_010">ERS 5</span></div>
 <div style="position:absolute;left:217.68px;top:32.88px" class="cls_010"><span class="cls_010">Roadmap for</span></div>
 <div style="position:absolute;left:242.88px;top:62.88px" class="cls_010"><span class="cls_010">Recovery</span></div>
@@ -920,9 +996,9 @@
 <div style="position:absolute;left:557.52px;top:757.92px" class="cls_009"><span class="cls_009">29</span></div>
 </template>
 
-<template name="page22">
+<template name="22">
 <div style="position:absolute;left:0px;top:0px">
-<img src="6aec7fd6-23a1-11e6-94e3-002590d31986_id_matrix_files/background035.jpg" width=612 height=792></div>
+<img src="/images/pdf-bg-22.jpg" width="612" height="792"></div>
 <div style="position:absolute;left:193.20px;top:29.76px" class="cls_010"><span class="cls_010">Roadmap for</span></div>
 <div style="position:absolute;left:49.44px;top:32.16px" class="cls_010"><span class="cls_010">ERS 5</span></div>
 <div style="position:absolute;left:218.40px;top:63.84px" class="cls_010"><span class="cls_010">Recovery</span></div>
@@ -955,9 +1031,9 @@
 <div style="position:absolute;left:269.04px;top:758.16px" class="cls_009"><span class="cls_009">2 of 3</span></div>
 </template>
 
-<template name="page23">
+<template name="23">
 <div style="position:absolute;left:0px;top:0px">
-<img src="6aec7fd6-23a1-11e6-94e3-002590d31986_id_matrix_files/background036.jpg" width=612 height=792></div>
+<img src="/images/pdf-bg-23.jpg" width="612" height="792"></div>
 <div style="position:absolute;left:83.52px;top:31.44px" class="cls_010"><span class="cls_010">ERS 5</span></div>
 <div style="position:absolute;left:234.00px;top:32.40px" class="cls_010"><span class="cls_010">Roadmap for</span></div>
 <div style="position:absolute;left:259.20px;top:62.40px" class="cls_010"><span class="cls_010">Recovery</span></div>
@@ -988,9 +1064,9 @@
 <div style="position:absolute;left:557.52px;top:757.92px" class="cls_009"><span class="cls_009">31</span></div>
 </template>
 
-<template name="page24">
+<template name="24">
 <div style="position:absolute;left:0px;top:0px">
-<img src="6aec7fd6-23a1-11e6-94e3-002590d31986_id_matrix_files/background037.jpg" width=612 height=792></div>
+<img src="/images/pdf-bg-24.jpg" width="612" height="792"></div>
 <div style="position:absolute;left:39.84px;top:30.96px" class="cls_010"><span class="cls_010">ERS 6A   Five Common Challenges</span></div>
 <div style="position:absolute;left:209.76px;top:60.96px" class="cls_010"><span class="cls_010">in Early Recovery</span></div>
 <div style="position:absolute;left:37.20px;top:124.08px" class="cls_014"><span class="cls_014">Everyone who attempts to stop using substances runs into situations</span></div>
@@ -1036,9 +1112,9 @@
 <div style="position:absolute;left:269.04px;top:758.16px" class="cls_009"><span class="cls_009">1 of 2</span></div>
 </template>
 
-<template name="page25">
+<template name="25">
 <div style="position:absolute;left:0px;top:0px">
-<img src="6aec7fd6-23a1-11e6-94e3-002590d31986_id_matrix_files/background038.jpg" width=612 height=792></div>
+<img src="/images/pdf-bg-25.jpg" width="612" height="792"></div>
 <div style="position:absolute;left:79.92px;top:32.16px" class="cls_010"><span class="cls_010">ERS 6A</span></div>
 <div style="position:absolute;left:215.76px;top:34.32px" class="cls_010"><span class="cls_010">Five Common Challenges</span></div>
 <div style="position:absolute;left:265.44px;top:64.32px" class="cls_010"><span class="cls_010">in Early Recovery</span></div>
@@ -1082,9 +1158,9 @@
 <div style="position:absolute;left:557.52px;top:757.92px" class="cls_009"><span class="cls_009">33</span></div>
 </template>
 
-<template name="page26">
+<template name="26">
 <div style="position:absolute;left:0px;top:0px">
-<img src="6aec7fd6-23a1-11e6-94e3-002590d31986_id_matrix_files/background039.jpg" width=612 height=792></div>
+<img src="/images/pdf-bg-26.jpg" width="612" height="792"></div>
 <div style="position:absolute;left:41.04px;top:31.92px" class="cls_010"><span class="cls_010">ERS 6B</span></div>
 <div style="position:absolute;left:162.48px;top:43.68px" class="cls_010"><span class="cls_010">Alcohol Arguments</span></div>
 <div style="position:absolute;left:37.44px;top:122.40px" class="cls_014"><span class="cls_014">Have you been able to stop using alcohol completely? At about 6 weeks into the</span></div>
@@ -1115,9 +1191,9 @@
 <div style="position:absolute;left:37.20px;top:758.40px" class="cls_009"><span class="cls_009">34</span></div>
 </template>
 
-<template name="page27">
+<template name="27">
 <div style="position:absolute;left:0px;top:0px">
-<img src="6aec7fd6-23a1-11e6-94e3-002590d31986_id_matrix_files/background040.jpg" width=612 height=792></div>
+<img src="/images/pdf-bg-27.jpg" width="612" height="792"></div>
 <div style="position:absolute;left:75.60px;top:31.20px" class="cls_010"><span class="cls_010">ERS 7A    Thoughts, Emotions, and</span></div>
 <div style="position:absolute;left:317.76px;top:63.36px" class="cls_010"><span class="cls_010">Behavior</span></div>
 <div style="position:absolute;left:73.44px;top:123.84px" class="cls_014"><span class="cls_014">Habitual substance use changes the way people think, how they feel, and how they</span></div>
@@ -1149,9 +1225,9 @@
 <div style="position:absolute;left:557.52px;top:757.92px" class="cls_009"><span class="cls_009">35</span></div>
 </template>
 
-<template name="page28">
+<template name="28">
 <div style="position:absolute;left:0px;top:0px">
-<img src="6aec7fd6-23a1-11e6-94e3-002590d31986_id_matrix_files/background041.jpg" width=612 height=792></div>
+<img src="/images/pdf-bg-28.jpg" width="612" height="792"></div>
 <div style="position:absolute;left:42.24px;top:31.44px" class="cls_010"><span class="cls_010">ERS 7B</span></div>
 <div style="position:absolute;left:205.44px;top:43.68px" class="cls_010"><span class="cls_010">Addictive Behavior</span></div>
 <div style="position:absolute;left:37.44px;top:122.40px" class="cls_014"><span class="cls_014">People who abuse substances often feel that their lives are out of control. Maintaining</span></div>
@@ -1199,9 +1275,9 @@
 <div style="position:absolute;left:37.20px;top:758.40px" class="cls_009"><span class="cls_009">36</span></div>
 </template>
 
-<template name="page29">
+<template name="29">
 <div style="position:absolute;left:0px;top:0px">
-<img src="6aec7fd6-23a1-11e6-94e3-002590d31986_id_matrix_files/background042.jpg" width=612 height=792></div>
+<img src="/images/pdf-bg-29.jpg" width="612" height="792"></div>
 <div style="position:absolute;left:82.32px;top:30.96px" class="cls_010"><span class="cls_010">ERS 8</span></div>
 <div style="position:absolute;left:260.16px;top:42.24px" class="cls_010"><span class="cls_010">12-Step Sayings</span></div>
 <div style="position:absolute;left:73.44px;top:123.84px" class="cls_014"><span class="cls_014">The program of Alcoholics Anonymous has developed some short sayings that help</span></div>
@@ -1234,9 +1310,9 @@
 <div style="position:absolute;left:557.52px;top:757.92px" class="cls_009"><span class="cls_009">37</span></div>
 </template>
 
-<template name="page30">
+<template name="30">
 <div style="position:absolute;left:0px;top:0px">
-<img src="6aec7fd6-23a1-11e6-94e3-002590d31986_id_matrix_files/background043.jpg" width=612 height=792></div>
+<img src="/images/pdf-bg-30.jpg" width="612" height="792"></div>
 <div style="position:absolute;left:49.20px;top:30.72px" class="cls_010"><span class="cls_010">ERS 8</span></div>
 <div style="position:absolute;left:194.40px;top:42.72px" class="cls_010"><span class="cls_010">12-Step Sayings</span></div>
 <div style="position:absolute;left:37.44px;top:121.92px" class="cls_017"><span class="cls_017">Angry: </span><span class="cls_014">This emotional state is probably the most common cause of relapse to drug</span></div>
@@ -1256,4 +1332,31 @@
 <div style="position:absolute;left:37.44px;top:581.04px" class="cls_017"><span class="cls_017">What could you do differently to avoid being so vulnerable? <br><textarea></textarea></span></div>
 <div style="position:absolute;left:37.20px;top:758.40px" class="cls_009"><span class="cls_009">38</span></div>
 <div style="position:absolute;left:269.04px;top:758.16px" class="cls_009"><span class="cls_009">2 of 2</span></div>
+</template>
+
+<template name="31">
+  <div>
+    <h4>External Resources</h4>
+    <p>You've reached the end of the worksheet, congratulations!</p>
+    <hr>
+    <p>
+    For more resources:
+    <ul class="mdl-list">
+      <li class="mdl-list__item"><a target="_blank" href="http://atforum.com/documents/english/Telling_others_about_MMT.pdf">Brochure on suggestions about telling others about participation in MMT.</a></li>
+      <li class="mdl-list__item"><a target="_blank" href="http://store.samhsa.gov/product/Medication-Assisted-Treatment-for-Opioid-Addiction-Facts-for-Families-and-Friends/SMA15-4443">MAT for Opioid Addiction: Facts for Family & Friends</a></li>
+      <li class="mdl-list__item"><a target="_blank" href="http://ncadd.org/images/stories/PDF/Consumer-Guide-Medication-Assisted-Recovery.pdf">NCADD's PDF</a></li>
+      <li class="mdl-list__item"><a target="_blank" href="http://store.samhsa.gov/product/Follow-Directions-How-to-Use-Methadone-Safely/SMA09-4409">SAMHSA's brochure describes the use of methadone in medication-assisted treatment of addiction to heroin and other opioids, including narcotic pain medicines. Describes how to use methadone safely, the dangers of methadone overdose, and life-threatening methadone side effects. </a></li>
+      <li class="mdl-list__item"><a target="_blank" href="http://www.naabt.org/documents/EmergencyCard.pdf">NAABT resources - Emergency Card</a></li>
+      <li class="mdl-list__item"><a target="_blank" href="http://www.aafp.org/afp/2003/1115/p1971.html">Common Problems in Patients Recovering from Chemical Dependency</a></li>
+      <li class="mdl-list__item"><a target="_blank" href="https://www.youtube.com/playlist?list=PLAWzAhT15N-qurIyzUG8bI8OHA1w80utI">Recovery Month stories of recovery</a></li>
+      <li class="mdl-list__item"><a target="_blank" href="http://www.naabt.org/true_stories.cfm">Recovery stories</a></li>
+      <li class="mdl-list__item"><a target="_blank" href="http://www.samhsa.gov/sites/default/files/partnersforrecovery/docs/Know_Your_Rights_Brochure_0110.pdf">SAMHSA brochure</a></li>
+      <li class="mdl-list__item"><a target="_blank" href="http://www.methadone.us/methadone-clinics/">Methadone.us govt website</a></li>
+    </ul>
+    </p>
+    <hr>
+    <p>
+    This has been a Select Excerpt (2-3, 11-38) from the <a target="_blank" href="http://www.methadone.us/matrix.pdf">Client’s Handbook - Matrix Intensive Outpatient Treatment for People With Stimulant Use Disorders</a>
+    </p>
+  </div>
 </template>

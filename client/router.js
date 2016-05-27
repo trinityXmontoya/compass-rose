@@ -23,26 +23,26 @@ FlowRouter.route('/drugs', {
   }
 });
 
-FlowRouter.route('/toolbox', {
-  name: 'Toolbox.show',
-  action: function() {
-    BlazeLayout.render("Layout", {content: "Toolbox"});
-  }
-});
+// FlowRouter.route('/toolbox', {
+//   name: 'Toolbox.show',
+//   action: function() {
+//     BlazeLayout.render("Layout", {content: "Toolbox"});
+//   }
+// });
 
-FlowRouter.route('/self-help', {
-  name: 'SelfHelp.show',
-  action: function() {
-    BlazeLayout.render("Layout", {content: "SelfHelp"});
-  }
-});
+// FlowRouter.route('/self-help', {
+//   name: 'SelfHelp.show',
+//   action: function() {
+//     BlazeLayout.render("Layout", {content: "SelfHelp"});
+//   }
+// });
 
-FlowRouter.route('/stories', {
-  name: 'Stories.show',
-  action: function() {
-    BlazeLayout.render("Layout", {content: "Stories"});
-  }
-});
+// FlowRouter.route('/stories', {
+//   name: 'Stories.show',
+//   action: function() {
+//     BlazeLayout.render("Layout", {content: "Stories"});
+//   }
+// });
 
 FlowRouter.route('/credits', {
   name: 'Credits.show',

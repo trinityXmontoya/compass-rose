@@ -73,32 +73,20 @@ var loadGoodRXWidget = function(drug){
 }
 
 Template.Drugs.onRendered(function(){
-  loadGoodRXWidget("methadone")
+  Session.set("currentDrugSelection", "methadone")
+  loadGoodRXWidget(Session.get("currentDrugSelection"))
 })
-
-Template.Drugs.onCreated(function () {
-  this.currentSelection = new ReactiveVar("methadone");
-  // Template.instance().currentSelection.set("methadone")
-});
 
 Template.Drugs.events({
   'click a.drug' (evt, instance) {
-    console.log(instance)
     drug = evt.currentTarget.dataset.value
-    instance.currentSelection.set(info[drug]);
     loadGoodRXWidget(drug)
-
+    Session.set("currentDrugSelection", drug)
   },
 });
 
 Template.Drugs.helpers({
   selection() {
-    return Template.instance().currentSelection.get()
+    return info[Session.get("currentDrugSelection")];
   }
-});
-
-Template.Drugs_info.helpers({
-  addlInfo() {
-    return info;
-  },
 });
