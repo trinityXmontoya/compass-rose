@@ -5,7 +5,7 @@ Tracker.autorun(function() {
 
 FlowRouter.route('/', {
   action: function() {
-    BlazeLayout.render("Layout", {content: "Home"});
+    BlazeLayout.render("Layout", {content: "Worksheet"});
   }
 });
 
