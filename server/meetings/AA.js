@@ -26,11 +26,11 @@ Meetings.AA = {
         var name = $(nameInfo[0]).text()
         var website = $(nameInfo[1]).text()
         // TODO ugh
-        var nums = _.trim(
+        var nums = Meetings.formatPhoneNumbers(_.trim(
           _.replace(_.replace(
             _.replace($(row).find(".item").not("a").text(), "Site: ", ""),
             name, ""), website, "")
-          )
+          ))
         return {
            type: "AA",
            name: name,

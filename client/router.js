@@ -1,6 +1,11 @@
+Tracker.autorun(function() {
+  FlowRouter.watchPathChange();
+  $("#pdf-viewer-container").hide()
+});
+
 FlowRouter.route('/', {
   action: function() {
-    BlazeLayout.render("Layout");
+    BlazeLayout.render("Layout", {content: "Home"});
   }
 });
 

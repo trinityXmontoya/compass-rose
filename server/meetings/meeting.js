@@ -5,6 +5,11 @@ Meetings = {
   AA: {},
   CDA: {},
   SMART: {},
+  formatPhoneNumbers: function(str){
+    return str.replace(/(\(?\d{3}.?\d{3}.?\d{4})/g, function(m){
+      return "<a href='tel:" + m + "'>" + m + "</a>"
+    })
+  },
   seed: function(){
     var meetings = [
       this.NA.seed(), // 8

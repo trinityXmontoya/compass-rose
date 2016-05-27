@@ -30,12 +30,13 @@ Meetings.SMART = {
       var results = _.map(trows, function(tr){
         var tdata = $(tr).find("td")
         var locationInfo = _this.extractLocationInfo(_.trim($(tdata[3]).text()))
+        var phone = Meetings.formatPhoneNumbers($(tdata[4]).text())
         var res = {
           type: "SMART",
           country: $(tdata[0]).text(),
           state: $(tdata[1]).text(),
           city: $(tdata[2]).text(),
-          phone: $(tdata[4]).text(),
+          phone: phone,
           contact: $(tdata[5]).text(),
           addlInfo: $(tdata[6]).text()
         }

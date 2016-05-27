@@ -11,7 +11,10 @@ Meetings.NA = {
     var arr = _.split(str, "http")
     phone = arr[0]
     website = arr[1]
-    if (phone){ phone = _.trim(_.split(phone, "Phone:"))[1] }
+    if (phone){
+      num = _.trim(_.split(phone, "Phone:"))[1]
+      phone = Meetings.formatPhoneNumbers(num)
+    }
     if (website) { website = "http" + website }
     return { phone: phone, website: website }
   },
