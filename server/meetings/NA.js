@@ -29,7 +29,7 @@ Meetings.NA = {
         var tdata = $(tr).find("td")
         var contactInfo =_this.extractContactInfo(_.trim($(tdata[1]).text()))
         var res = {
-           source: "NA",
+           type: "NA",
            area: $(tdata[0]).text(),
            country: $(tdata[2]).text(),
            state: $(tdata[3]).text()

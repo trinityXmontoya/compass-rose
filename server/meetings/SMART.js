@@ -31,7 +31,7 @@ Meetings.SMART = {
         var tdata = $(tr).find("td")
         var locationInfo = _this.extractLocationInfo(_.trim($(tdata[3]).text()))
         var res = {
-          source: "SMART",
+          type: "SMART",
           country: $(tdata[0]).text(),
           state: $(tdata[1]).text(),
           city: $(tdata[2]).text(),

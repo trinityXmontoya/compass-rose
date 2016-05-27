@@ -21,13 +21,15 @@ var SelfHelpResources = [
 
 Template.SelfHelp.events({
   "click a.self-help-resource" (evt, instance){
-    var pageNum = evt.currentTarget.dataset.pgnum
+    // +5 bc PDF TOC does not match page numbers
+    var pageNum = parseInt(evt.currentTarget.dataset.pgnum) + 5
     var url = "/matrix.pdf#page=" + pageNum
 
     if(PDFObject.supportsPDFs){
        PDFObject.embed(url, "#pdf-viewer")
     } else {
-      $("#pdf-viewer").text("Inline PDFS are not supported by this browser, visit link here")
+      var noSupportHtml = "<p> Inline PDFS are not supported by this browser, <a href='" + url + "'> visit link here </a></p>"
+      $("#pdf-viewer").html(noSupportHtml)
     }
     $("#pdf-viewer-container").show()
   },

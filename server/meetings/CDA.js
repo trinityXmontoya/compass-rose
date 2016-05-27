@@ -5,9 +5,9 @@ Meetings.CDA = {
   extractAddlInfo: function(infoArr){
     var res = {}
     if (infoArr.length == 2){
-      regex = _.split(infoArr[1], " - ")
-      res.name = regex[0]
-      res.location = regex[1]
+      info = _.split(infoArr[1], " - ")
+      res.name = info[0]
+      res.location = info[1]
     }
     else if (infoArr.length == 3){
      res.location = _.trim(infoArr[2])
@@ -34,7 +34,7 @@ Meetings.CDA = {
       return _.map(meetings, function(meeting){
         var info = _.split($(meeting).html(), "<br>")
         var res = {
-          source: "CDA",
+          type: "CDA",
           area: area,
           state: state,
           time: info[0],
