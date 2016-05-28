@@ -1,5 +1,7 @@
 <template name="MeetingFinder">
-  <div id="meeting-finder-content">
+  <div id="meeting-finder-content" class="mdl-grid">
+
+  <div class="mdl-cell mdl-cell--12-col">
   <h2>Meeting Finder</h2>
 
   <p>Find Narcotics Anonymous (NA), Alcholics Anonymous (AA), Chemically Dependent Anonymous (CDA), and SMART Recovery Meetings with this one simple tool!</p>
@@ -17,6 +19,7 @@
     <div style="margin: 50px auto;" id="p2" class="mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>
   {{else}}
     {{#if searchResults.count}}
+    <div class="mdl-cell mdl-cell--12-col">
       <table id="meeting-finder-results-table">
         <thead>
           <tr>
@@ -49,11 +52,12 @@
           {{/each}}
         </tbody>
       </table>
+    </div>
     {{else}}
       <!-- <p>No results at this time for this state. Please use the below resources!</p> -->
     {{/if}}
   {{/if}}
-
+<div class="mdl-cell mdl-cell--12-col">
 
   <div class="card-wide mdl-card mdl-shadow--2dp" style="    margin: 0 auto;
     text-align: left;     width: 512px;">
@@ -71,7 +75,7 @@
   </div>
 </div>
 
-
-
+</div>
+</div>
   </div>
 </template>

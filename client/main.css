@@ -58,6 +58,10 @@ vertical-align: text-top;
       margin: 25px 0;
 }
 
+img.compass-rose-logo-small {
+    margin-left: 25px;
+}
+
 /* Zebra striping */
 tr:nth-of-type(odd) {
   background: #eee;
