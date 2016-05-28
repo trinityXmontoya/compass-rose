@@ -15,12 +15,11 @@ Template.MeetingFinder.onCreated(function(){
 })
 
 Template.MeetingFinder.events({
-	"submit form#meeting-finder-location-entry" (evt,instance){
-		evt.preventDefault();
-		var state = evt.currentTarget.state.value
+	"change #meeting-finder-form-state" (evt,instance){
+		var state = evt.currentTarget.value
 		if (state){
 			Session_MeetingFinder_State.set(state)
-			evt.currentTarget.state.value = ""
+			evt.currentTarget.value = ""
 		}
 	}
 })

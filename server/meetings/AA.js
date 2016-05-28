@@ -33,11 +33,11 @@ Meetings.AA = {
           ))
         return {
            type: "AA",
-           name: name,
+           contact: name,
            city: city,
            state: state,
            country: "US",
-           website: website,
+           addlInfo: "<a target='_blank' href='" + website + "'>" + website + "</a>'",
            phone: nums
         };
       });

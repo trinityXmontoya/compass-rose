@@ -26,5 +26,5 @@ Meetings = {
 
 Meteor.publish("meetings.all", function(state){
   if (!state){ return this.ready() }
-  else { return USMeetings.find({state: state}) }
+  else { return USMeetings.find({state: state}, {sort: {type: -1}}) }
 })

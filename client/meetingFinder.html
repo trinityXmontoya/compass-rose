@@ -1,82 +1,77 @@
 <template name="MeetingFinder">
+  <div id="meeting-finder-content">
   <h2>Meeting Finder</h2>
 
   <p>Find Narcotics Anonymous (NA), Alcholics Anonymous (AA), Chemically Dependent Anonymous (CDA), and SMART Recovery Meetings with this one simple tool!</p>
 
   <form action="#" id="meeting-finder-location-entry">
     <div class="mdl-textfield mdl-js-textfield">
-      <select id="meeting-finder-form-state" name="state">
+      <select id="meeting-finder-form-state" name="state" data-placeholder="Select your state" placeholder="Select your state...">
         {{>StateSelectOptions}}
       </select>
-      <label class="mdl-textfield__label" for="meeting-finder-form-state">State</label>
     </div>
     <br>
-    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
-      Search
-    </button>
   </form>
 
   {{#if searching}}
-    <div id="p2" class="mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>
+    <div style="margin: 50px auto;" id="p2" class="mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>
   {{else}}
     {{#if searchResults.count}}
-      <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+      <table id="meeting-finder-results-table">
         <thead>
           <tr>
-            <th class="mdl-data-table__cell--non-numeric">Type</th>
-            <th class="mdl-data-table__cell--non-numeric">Name</th>
-            <th class="mdl-data-table__cell--non-numeric">City/Area</th>
-            <th class="mdl-data-table__cell--non-numeric">Phone</th>
-            <th class="mdl-data-table__cell--non-numeric">Website</th>
-            <th class="mdl-data-table__cell--non-numeric">Time</th>
-            <th class="mdl-data-table__cell--non-numeric">Location</th>
-            <th class="mdl-data-table__cell--non-numeric">Contact</th>
-            <th class="mdl-data-table__cell--non-numeric">State</th>
-            <th class="mdl-data-table__cell--non-numeric">Additional Info</th>
+            <th>Type</th>
+            <th>City/Area</th>
+            <th>Phone</th>
+            <th>Time</th>
+            <th>Location</th>
+            <th>Contact</th>
+            <th>Additional Info</th>
           </tr>
         </thead>
         <tbody>
           {{#each meeting in searchResults}}
             <tr>
-              <td class="mdl-data-table">{{meeting.type}}</td>
-              <td class="mdl-data-table">{{meeting.name}}</td>
-              <td class="mdl-data-table">
+              <td>{{meeting.type}}</td>
+              <td>
                 {{#if meeting.city}}
                   {{meeting.city}}
                 {{else}}
                   {{meeting.area}}
                 {{/if}}
               </td>
-              <td class="mdl-data-table">{{{meeting.phone}}}</td>
-              <td class="mdl-data-table">
-                <a href="{{meeting.website}}">{{meeting.website}}</a>
-              </td>
-              <td class="mdl-data-table">{{meeting.time}}</td>
-              <td class="mdl-data-table">{{meeting.location}}</td>
-              <td class="mdl-data-table">{{{meeting.contact}}}</td>
-              <td class="mdl-data-table">{{meeting.state}}</td>
-              <td class="mdl-data-table">{{meeting.addlInfo}}</td>
+              <td>{{{meeting.phone}}}</td>
+              <td>{{meeting.time}}</td>
+              <td>{{meeting.location}}</td>
+              <td>{{{meeting.contact}}}</td>
+              <td>{{{meeting.addlInfo}}}</td>
             </tr>
           {{/each}}
         </tbody>
       </table>
     {{else}}
-      <p>No results at this time for this state. Please use the below resources!</p>
+      <!-- <p>No results at this time for this state. Please use the below resources!</p> -->
     {{/if}}
   {{/if}}
 
 
+  <div class="card-wide mdl-card mdl-shadow--2dp" style="    margin: 0 auto;
+    text-align: left;     width: 512px;">
+  <div class="mdl-card__title">
+    <h5 class="mdl-card__title-text">Sources</h5>
+  </div>
+  <div class="mdl-card__supporting-text" style="    margin-top: 0;
+    margin-bottom: 0;">
+    <ul style="    padding-left: 0 !important;">
+      <li class="mdl-list__item"><a href="http://www.na.org/meetingsearch/">Narcotics Anonymous - NA</a></li>
+      <li class="mdl-list__item"><a href="http://www.aa.org/pages/en_US/find-aa-resources">Alcoholics Anonymous - AA</a></li>
+      <li class="mdl-list__item"><a href="http://cdawebsitedev.com/meetings.html#">Chemically Dependent Anonymous - CDA</a></li>
+      <li class="mdl-list__item"><a href="http://www.smartrecovery.org/meetings_db/view/">SMART Recovery</a></li>
+    </ul>
+  </div>
+</div>
 
-  <div>
-    <p>
-      Sources:
 
-      <ul>
-        <li><a href="http://www.na.org/meetingsearch/">Narcotics Anonymous - NA</a></li>
-        <li><a href="http://www.aa.org/pages/en_US/find-aa-resources">Alcoholics Anonymous - AA</a></li>
-        <li><a href="http://cdawebsitedev.com/meetings.html#">Chemically Dependent Anonymous - CDA</a></li>
-        <li><a href="http://www.smartrecovery.org/meetings_db/view/">SMART Recovery</a></li>
-      </ul>
-    </p>
+
   </div>
 </template>

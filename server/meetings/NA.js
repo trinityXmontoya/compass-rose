@@ -15,8 +15,11 @@ Meetings.NA = {
       num = _.trim(_.split(phone, "Phone:"))[1]
       phone = Meetings.formatPhoneNumbers(num)
     }
-    if (website) { website = "http" + website }
-    return { phone: phone, website: website }
+    if (website) {
+      website = "http" + website
+      website = "<a target='_blank' href='" + website + "'>" + website + "</a>"
+    }
+    return { phone: phone, addlInfo: website }
   },
 
   seed: function(){
