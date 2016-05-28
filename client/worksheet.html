@@ -40,7 +40,7 @@ width: 100%;
 
 
   <div class="container mdl-grid">
-    <div style="position:relative" class="content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--12-col">
+    <div style="position:relative; margin: 0 auto;" class="content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--12-col">
       <div style="overflow:hidden">
         {{> Template.dynamic template=currentPageSelection}}
       </div>
@@ -49,12 +49,14 @@ width: 100%;
 
       <div class="doc-viewer-bar">
 
-        <button data-pg="0" class="toc-list-item mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
+        <button data-pg="0" style="    bottom: 5px;
+    position: absolute;" class="toc-list-item mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
   <i class="material-icons">home</i>
 </button>
 
 
-<div class="doc-viewer-tab-center-actions" style="position:absolute;bottom:0;right:0">
+<div class="doc-viewer-tab-center-actions" style="    bottom: 5px;
+    position: absolute; right: 0">
         <button data-dir="-1" class="doc-viewer-btn mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
   <i class="material-icons">arrow_back</i>
 </button>
@@ -67,7 +69,6 @@ width: 100%;
 </button>
 </div>
 
-{{currentPageSelection}}
       </div>
 
     </div>
@@ -78,12 +79,14 @@ width: 100%;
 </template>
 
 <template name="0">
-  <div>
-    <h3>Recovery Worksheet</h3>
+  <div style="padding: 5px">
+    <h3 style="    background: rgb(0,188,212);
+    width: 100%;
+    padding: 10px;    margin-top: 0;">Recovery Worksheet</h3>
     <p>
-      Fill out and saves pages locally to share with friends, family, or your doctor!
+      <div>Fill out and screenshot pages to share with friends, family, and your doctor!</div>
       <br>
-      Select Excerpt (2-3, 11-38) from the <a href="http://www.methadone.us/matrix.pdf" target="_blank">Client’s Handbook - Matrix Intensive Outpatient Treatment for People With Stimulant Use Disorders</a>
+      Select Excerpts (pgs. 2-3, 11-38) from the <a href="http://www.methadone.us/matrix.pdf" target="_blank">Client’s Handbook - Matrix Intensive Outpatient Treatment for People With Stimulant Use Disorders</a>
       <br>
       <p>
         <h5>Table of Contents</h5>
@@ -93,7 +96,6 @@ width: 100%;
           <li class="toc-list-item" data-pg="3"><a href="">The Importance of Scheduling</a></li>
           <li class="toc-list-item" data-pg="4"><a href="">Daily/Hourly Schedule</a></li>
           <li class="toc-list-item" data-pg="5"><a href="">Marking Progress</a></li>
-          <li class="toc-list-item" data-pg="6"><a href="">Calendar</a></li>
           <li class="toc-list-item" data-pg="7"><a href="">Triggers</a></li>
           <li class="toc-list-item" data-pg="8"><a href="">Trigger–Thought–Craving–Use</a></li>
           <li class="toc-list-item" data-pg="9"><a href="">Thought-Stopping Techniques</a></li>
@@ -284,11 +286,11 @@ width: 100%;
 <div style="position:absolute;left:557.52px;top:757.92px" class="cls_009"><span class="cls_009">13</span></div>
 </template>
 
-<template name="6">
+<template name="60">
 <div style="position:absolute;left:48.00px;top:32.64px" class="cls_010"><span class="cls_010">CAL 2</span></div>
 <div style="position:absolute;left:243.84px;top:44.16px" class="cls_010"><span class="cls_010">Calendar</span></div>
 <div style="position:absolute;left:50.16px;top:130.32px" class="cls_013"><span class="cls_013">Month: <input type="text"></span></div>
-<table>
+<table style="    top: 137px; position: relative; ">
   <thead>
     <tr>
       <th >SUNDAY</th>
@@ -558,50 +560,38 @@ width: 100%;
 <div style="position:absolute;left:147.12px;top:205.92px" class="cls_017"><span class="cls_017">0%</span></div>
 <div style="position:absolute;left:394.80px;top:205.92px" class="cls_017"><span class="cls_017">100%</span></div>
 <div style="position:absolute;left:102.48px;top:225.84px" class="cls_017"><span class="cls_017">Chance of Using</span></div>
-<div style="position:absolute;left:359.04px;top:225.84px" class="cls_017"><span class="cls_017">Chance of Using <br>
-  <input class="mdl-slider mdl-js-slider" type="range" min="0" max="100" value="0" tabindex="0"></span></div>
-  <table class="mdl-data-table mdl-shadow--2dp">
-    <thead>
-      <tr>
-        <th class="mdl-data-table__cell--non-numeric">Never Use</th>
-        <th class="mdl-data-table__cell--non-numeric">Almost Never Use</th>
-        <th class="mdl-data-table__cell--non-numeric">Almost Always Use</th>
-        <th class="mdl-data-table__cell--non-numeric">Always Use</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="mdl-data-table__cell--non-numeric"><input type="text"></td>
-        <td class="mdl-data-table__cell--non-numeric"><input type="text"></td>
-        <td class="mdl-data-table__cell--non-numeric"><input type="text"></td>
-        <td class="mdl-data-table__cell--non-numeric"><input type="text"></td>
-      </tr>
-      <tr>
-        <td class="mdl-data-table__cell--non-numeric"><input type="text"></td>
-        <td class="mdl-data-table__cell--non-numeric"><input type="text"></td>
-        <td class="mdl-data-table__cell--non-numeric"><input type="text"></td>
-        <td class="mdl-data-table__cell--non-numeric"><input type="text"></td>
-      </tr>
-      <tr>
-        <td class="mdl-data-table__cell--non-numeric"><input type="text"></td>
-        <td class="mdl-data-table__cell--non-numeric"><input type="text"></td>
-        <td class="mdl-data-table__cell--non-numeric"><input type="text"></td>
-        <td class="mdl-data-table__cell--non-numeric"><input type="text"></td>
-      </tr>
-      <tr>
-        <td class="mdl-data-table__cell--non-numeric"><input type="text"></td>
-        <td class="mdl-data-table__cell--non-numeric"><input type="text"></td>
-        <td class="mdl-data-table__cell--non-numeric"><input type="text"></td>
-        <td class="mdl-data-table__cell--non-numeric"><input type="text"></td>
-      </tr>
-      <tr>
-        <td class="mdl-data-table__cell--non-numeric">These situations are “safe.”</td>
-        <td class="mdl-data-table__cell--non-numeric">These situations are low risk, but caution is needed.</td>
-        <td class="mdl-data-table__cell--non-numeric">These situations are high risk. Staying in these situations is extremely dangerous.</td>
-        <td class="mdl-data-table__cell--non-numeric">Involvement in these situations is deciding to stay addicted. Avoid totally.</td>
-      </tr>
-    </tbody>
-  </table>
+<div style="position:absolute;left:359.04px;top:225.84px" class="cls_017"><span class="cls_017">Chance of Using</span><br>
+  <!-- <input class="mdl-slider mdl-js-slider" type="range" min="0" max="100" value="0" tabindex="0"></span></div> -->
+</div>
+<div style="position: absolute;
+    bottom: 284px;
+    left: 40px;">
+  <input type="text">
+  <input type="text">
+  <input type="text">
+  <input type="text">
+  <br><br>
+  <input type="text">
+  <input type="text">
+  <input type="text">
+  <input type="text">
+  <br><br>
+  <input type="text">
+  <input type="text">
+  <input type="text">
+  <input type="text">
+  <br><br>
+  <input type="text">
+  <input type="text">
+  <input type="text">
+  <input type="text">
+  <br><br>
+  <input type="text">
+  <input type="text">
+  <input type="text">
+  <input type="text">
+  <br><br>
+</div>
 <div style="position:absolute;left:37.20px;top:758.40px" class="cls_009"><span class="cls_009">20</span></div>
 </template>
 
@@ -652,7 +642,7 @@ width: 100%;
 <div style="position:absolute;left:331.92px;top:370.56px" class="cls_019"><span class="cls_019"><input type="checkbox" class="mdl-checkbox__input"></span><span class="cls_014"> Anxious</span></div>
 <div style="position:absolute;left:460.32px;top:370.56px" class="cls_019"><span class="cls_019"><input type="checkbox" class="mdl-checkbox__input"></span><span class="cls_014"> Hungry</span></div>
 <div style="position:absolute;left:74.88px;top:399.36px" class="cls_017"><span class="cls_017">What emotional states that are not listed above have triggered you to</span></div>
-<div style="position:absolute;left:74.88px;top:418.32px" class="cls_017"><span class="cls_017">use substances? <br><input type="text"></span></div>
+<div style="position:absolute;left:74.88px;top:418.32px" class="cls_017"><span class="cls_017">use substances? <br><input type="text" class="long-field"></span></div>
 <div style="position:absolute;left:74.88px;top:484.56px" class="cls_017"><span class="cls_017">Was your use in the weeks before entering treatment</span></div>
 <div style="position:absolute;left:110.88px;top:513.84px" class="cls_014"><span class="cls_014"><input type="checkbox" class="mdl-checkbox__input"> Tied primarily to emotional conditions?</span></div>
 <div style="position:absolute;left:110.88px;top:540.00px" class="cls_014"><span class="cls_014"><input type="checkbox" class="mdl-checkbox__input"> Routine and automatic without much emotional triggering?</span></div>
@@ -671,55 +661,42 @@ width: 100%;
 <img src="/images/pdf-bg-14.jpg" width="612" height="792"></div>
 <div style="position:absolute;left:44.88px;top:32.88px" class="cls_010"><span class="cls_010">ERS 3B</span></div>
 <div style="position:absolute;left:163.68px;top:44.88px" class="cls_010"><span class="cls_010">Internal Trigger Chart</span></div>
-<div style="position:absolute;left:37.44px;top:121.92px" class="cls_017"><span class="cls_017">Name: __________________________  Date:_________</span></div>
+<div style="position:absolute;left:37.44px;top:121.92px" class="cls_017"><span class="cls_017">Name: <input type="text">  Date: <input type="text"></span></div>
 <div style="position:absolute;left:37.44px;top:156.24px" class="cls_017"><span class="cls_017">Instructions: </span><span class="cls_014">List emotional states below according to their degree</span></div>
 <div style="position:absolute;left:37.44px;top:179.52px" class="cls_014"><span class="cls_014">of association with substance use.</span></div>
 <div style="position:absolute;left:147.36px;top:214.56px" class="cls_017"><span class="cls_017">0%</span></div>
 <div style="position:absolute;left:395.28px;top:214.56px" class="cls_017"><span class="cls_017">100%</span></div>
 <div style="position:absolute;left:102.72px;top:234.48px" class="cls_017"><span class="cls_017">Chance of Using</span></div>
-<div style="position:absolute;left:359.28px;top:234.48px" class="cls_017"><span class="cls_017">Chance of Using<input class="mdl-slider mdl-js-slider" type="range" min="0" max="100" value="0" tabindex="0"></span></div>
-<table class="mdl-data-table mdl-shadow--2dp">
-  <thead>
-    <tr>
-      <th class="mdl-data-table__cell--non-numeric">Never Use</th>
-      <th class="mdl-data-table__cell--non-numeric">Almost Never Use</th>
-      <th class="mdl-data-table__cell--non-numeric">Almost Always Use</th>
-      <th class="mdl-data-table__cell--non-numeric">Always Use</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td class="mdl-data-table__cell--non-numeric"><input type="text"></td>
-      <td class="mdl-data-table__cell--non-numeric"><input type="text"></td>
-      <td class="mdl-data-table__cell--non-numeric"><input type="text"></td>
-      <td class="mdl-data-table__cell--non-numeric"><input type="text"></td>
-    </tr>
-    <tr>
-      <td class="mdl-data-table__cell--non-numeric"><input type="text"></td>
-      <td class="mdl-data-table__cell--non-numeric"><input type="text"></td>
-      <td class="mdl-data-table__cell--non-numeric"><input type="text"></td>
-      <td class="mdl-data-table__cell--non-numeric"><input type="text"></td>
-    </tr>
-    <tr>
-      <td class="mdl-data-table__cell--non-numeric"><input type="text"></td>
-      <td class="mdl-data-table__cell--non-numeric"><input type="text"></td>
-      <td class="mdl-data-table__cell--non-numeric"><input type="text"></td>
-      <td class="mdl-data-table__cell--non-numeric"><input type="text"></td>
-    </tr>
-    <tr>
-      <td class="mdl-data-table__cell--non-numeric"><input type="text"></td>
-      <td class="mdl-data-table__cell--non-numeric"><input type="text"></td>
-      <td class="mdl-data-table__cell--non-numeric"><input type="text"></td>
-      <td class="mdl-data-table__cell--non-numeric"><input type="text"></td>
-    </tr>
-    <tr>
-      <td class="mdl-data-table__cell--non-numeric">These emotions are “safe.”</td>
-      <td class="mdl-data-table__cell--non-numeric">These emotions are low risk, but caution is needed.</td>
-      <td class="mdl-data-table__cell--non-numeric">These emotions are high risk.</td>
-      <td class="mdl-data-table__cell--non-numeric">Persisting in these emotions is deciding to stay addicted. Avoid totally.</td>
-    </tr>
-  </tbody>
-</table>
+<div style="position:absolute;left:359.28px;top:234.48px" class="cls_017"><span class="cls_017">Chance of Using</span></div>
+<div style="position: absolute;
+    bottom: 284px;
+    left: 40px;">
+  <input type="text">
+  <input type="text">
+  <input type="text">
+  <input type="text">
+  <br><br>
+  <input type="text">
+  <input type="text">
+  <input type="text">
+  <input type="text">
+  <br><br>
+  <input type="text">
+  <input type="text">
+  <input type="text">
+  <input type="text">
+  <br><br>
+  <input type="text">
+  <input type="text">
+  <input type="text">
+  <input type="text">
+  <br><br>
+  <input type="text">
+  <input type="text">
+  <input type="text">
+  <input type="text">
+  <br><br>
+</div>
 <div style="position:absolute;left:37.20px;top:758.40px" class="cls_009"><span class="cls_009">22</span></div>
 </template>
 
@@ -1176,8 +1153,8 @@ width: 100%;
 <div style="position:absolute;left:37.44px;top:538.32px" class="cls_014"><span class="cls_014">because “forever” scares you, then you’re justifying drinking now and risking relapse</span></div>
 <div style="position:absolute;left:37.44px;top:557.28px" class="cls_014"><span class="cls_014">to substance use.</span></div>
 <div style="position:absolute;left:37.44px;top:580.32px" class="cls_017"><span class="cls_017">Has your addicted brain presented you with other justifications? If so,</span></div>
-<div style="position:absolute;left:37.44px;top:599.52px" class="cls_017"><span class="cls_017">what are they? <br><input type="text"></span></div>
-<div style="position:absolute;left:37.44px;top:663.60px" class="cls_017"><span class="cls_017">How are you planning to handle alcohol use in the future?<br><input type="text"></span></div>
+<div style="position:absolute;left:37.44px;top:599.52px" class="cls_017"><span class="cls_017">what are they? <br><input type="text" class="long-field"></span></div>
+<div style="position:absolute;left:37.44px;top:663.60px" class="cls_017"><span class="cls_017">How are you planning to handle alcohol use in the future?<br><input type="text" class="long-field"></span></div>
 <div style="position:absolute;left:37.20px;top:758.40px" class="cls_009"><span class="cls_009">34</span></div>
 </template>
 

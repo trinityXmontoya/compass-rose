@@ -63,6 +63,9 @@ vertical-align: text-top;
       padding: 10px !important;
 }
 
+.doc-viewer-bar {
+      height: 62px;
+}
 
 table {
   width: 100%;

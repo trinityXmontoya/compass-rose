@@ -7,7 +7,8 @@ Template.Worksheet.events({
     var dir = evt.currentTarget.dataset.dir
     var val = (Session.get("currentPageSelection") +  parseInt(dir))
     if (val < 0){ val = 0 }
-    else if (val == 32 ){ val = Session.get("currentPageSelection")}
+    else if (val==6) {val = 7}
+    else if (val == 32 ){ val = 31}
     Session.set("currentPageSelection", val)
   },
 
