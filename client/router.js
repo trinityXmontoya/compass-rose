@@ -5,19 +5,17 @@ Tracker.autorun(function() {
 
 FlowRouter.route('/', {
   action: function() {
-    BlazeLayout.render("Layout", {content: "Worksheet"});
+    BlazeLayout.render("Layout", {content: "Home"});
   }
 });
 
 FlowRouter.route('/meeting-finder', {
-  name: 'Meetings.finder',
   action: function() {
     BlazeLayout.render("Layout", {content: "MeetingFinder"});
   }
 });
 
 FlowRouter.route('/drugs', {
-  name: 'Drugs.show',
   action: function() {
     BlazeLayout.render("Layout", {content: "Drugs"});
   }
@@ -30,12 +28,11 @@ FlowRouter.route('/drugs', {
 //   }
 // });
 
-// FlowRouter.route('/self-help', {
-//   name: 'SelfHelp.show',
-//   action: function() {
-//     BlazeLayout.render("Layout", {content: "SelfHelp"});
-//   }
-// });
+FlowRouter.route('/self-help', {
+  action: function() {
+    BlazeLayout.render("Layout", {content: "Worksheet"});
+  }
+});
 
 // FlowRouter.route('/stories', {
 //   name: 'Stories.show',
@@ -45,7 +42,6 @@ FlowRouter.route('/drugs', {
 // });
 
 FlowRouter.route('/credits', {
-  name: 'Credits.show',
   action: function() {
     BlazeLayout.render("Layout", {content: "Credits"});
   }

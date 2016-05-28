@@ -40,8 +40,7 @@ width: 100%;
 
 
   <div class="container mdl-grid">
-    <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
-    <div style="position:relative" class="content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
+    <div style="position:relative" class="content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--12-col">
       <div style="overflow:hidden">
         {{> Template.dynamic template=currentPageSelection}}
       </div>
@@ -67,10 +66,6 @@ width: 100%;
   <i class="material-icons">arrow_forward</i>
 </button>
 </div>
-
-<button class=" mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored" style=" ">
-  <i class="material-icons">download</i>
-</button>
 
 {{currentPageSelection}}
       </div>
@@ -124,7 +119,6 @@ width: 100%;
 </template>
 
 <template name="1">
-  <div style="position:absolute;left:0px;top:0px"><img src="/images/pdf-bg-1.jpg" width="612" height="792"></div>
   <div style="position:absolute;left:145.68px;top:108.96px" class="cls_002"><span class="cls_002">Client’s Handbook</span></div>
   <div style="position:absolute;left:92.64px;top:277.92px" class="cls_003"><span class="cls_003">Matrix Intensive Outpatient Treatment for</span></div>
   <div style="position:absolute;left:118.32px;top:312.00px" class="cls_003"><span class="cls_003">People With Stimulant Use Disorders</span></div>
@@ -136,8 +130,6 @@ width: 100%;
 </template>
 
 <template name="2">
-<div style="position:absolute;left:0px;top:0px">
-<img src="/images/pdf-bg-2.jpg" width="612" height="792"></div>
 <div style="position:absolute;left:38.16px;top:52.32px" class="cls_006"><span class="cls_006">Acknowledgments</span></div>
 <div style="position:absolute;left:38.16px;top:72.96px" class="cls_007"><span class="cls_007">Numerous people contributed to this document, which is part of the Methamphetamine Treatment Project (MTP).</span></div>
 <div style="position:absolute;left:38.16px;top:85.92px" class="cls_007"><span class="cls_007">The document was written by Jeanne L. Obert, M.F.T., M.S.M.; Richard A. Rawson, Ph.D.; Michael J. McCann, M.A.;</span></div>
@@ -255,7 +247,7 @@ width: 100%;
 <div style="position:absolute;left:288.96px;top:212.40px" class="cls_014"><span class="cls_014">From <input type="text">  To <input type="text"> </span></div>
 <div style="position:absolute;left:46.80px;top:242.16px" class="cls_006"><span class="cls_006">9:00 AM <input type="text"> </span></div>
 <div style="position:absolute;left:46.80px;top:274.32px" class="cls_006"><span class="cls_006">10:00 AM <input type="text"> </span></div>
-<div style="position:absolute;left:367.92px;top:268.56px" class="cls_013"><span class="cls_013">Notes: <textarea></textarea> </span></div>
+<div style="position:absolute;left:367.92px;top:268.56px" class="cls_013"><span class="cls_013">Notes: <textarea style="position: absolute; margin-top: 0px; margin-bottom: 0px; height: 159px;"></textarea> </span></div>
 <div style="position:absolute;left:46.80px;top:306.72px" class="cls_006"><span class="cls_006">11:00 AM <input type="text"> </span></div>
 <div style="position:absolute;left:46.80px;top:338.88px" class="cls_006"><span class="cls_006">12:00 PM <input type="text"> </span></div>
 <div style="position:absolute;left:46.80px;top:371.04px" class="cls_006"><span class="cls_006">1:00 PM <input type="text"> </span></div>
@@ -263,7 +255,7 @@ width: 100%;
 <div style="position:absolute;left:46.80px;top:435.60px" class="cls_006"><span class="cls_006">3:00 PM <input type="text"> </span></div>
 <div style="position:absolute;left:46.80px;top:467.76px" class="cls_006"><span class="cls_006">4:00 PM <input type="text"> </span></div>
 <div style="position:absolute;left:46.80px;top:500.16px" class="cls_006"><span class="cls_006">5:00 PM <input type="text"> </span></div>
-<div style="position:absolute;left:368.40px;top:494.16px" class="cls_013"><span class="cls_013">Reminders: <textarea></textarea> </span></div>
+<div style="position:absolute;left:368.40px;top:494.16px" class="cls_013"><span class="cls_013">Reminders: <textarea style="position: absolute; margin-top: 0px; margin-bottom: 0px; height: 159px;"></textarea> </span></div>
 <div style="position:absolute;left:46.80px;top:532.32px" class="cls_006"><span class="cls_006">6:00 PM <input type="text"> </span></div>
 <div style="position:absolute;left:46.80px;top:564.48px" class="cls_006"><span class="cls_006">7:00 PM <input type="text"> </span></div>
 <div style="position:absolute;left:46.80px;top:596.88px" class="cls_006"><span class="cls_006">8:00 PM <input type="text"> </span></div>
@@ -293,65 +285,63 @@ width: 100%;
 </template>
 
 <template name="6">
-<div style="position:absolute;left:0px;top:0px">
-<img src="/images/pdf-bg-6.jpg" width="612" height="792"></div>
 <div style="position:absolute;left:48.00px;top:32.64px" class="cls_010"><span class="cls_010">CAL 2</span></div>
 <div style="position:absolute;left:243.84px;top:44.16px" class="cls_010"><span class="cls_010">Calendar</span></div>
 <div style="position:absolute;left:50.16px;top:130.32px" class="cls_013"><span class="cls_013">Month: <input type="text"></span></div>
-<table class="mdl-data-table mdl-shadow--2dp">
+<table>
   <thead>
     <tr>
-      <th class="mdl-data-table__cell--non-numeric">SUNDAY</th>
-      <th class="mdl-data-table__cell--non-numeric">MONDAY</th>
-      <th class="mdl-data-table__cell--non-numeric">TUESDAY</th>
-      <th class="mdl-data-table__cell--non-numeric">WEDNESDAY</th>
-      <th class="mdl-data-table__cell--non-numeric">THURSDAY</th>
-      <th class="mdl-data-table__cell--non-numeric">FRIDAY</th>
-      <th class="mdl-data-table__cell--non-numeric">SATURDAY</th>
+      <th >SUNDAY</th>
+      <th >MONDAY</th>
+      <th >TUESDAY</th>
+      <th >WEDNESDAY</th>
+      <th >THURSDAY</th>
+      <th >FRIDAY</th>
+      <th >SATURDAY</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td class="mdl-data-table__cell--non-numeric"><textarea></textarea></td><td class="mdl-data-table__cell--non-numeric"><textarea></textarea></td>
-      <td class="mdl-data-table__cell--non-numeric"><textarea></textarea></td><td class="mdl-data-table__cell--non-numeric"><textarea></textarea></td>
-      <td class="mdl-data-table__cell--non-numeric"><textarea></textarea></td><td class="mdl-data-table__cell--non-numeric"><textarea></textarea></td>
-      <td class="mdl-data-table__cell--non-numeric"><textarea></textarea></td>
+      <td ><textarea></textarea></td><td ><textarea></textarea></td>
+      <td ><textarea></textarea></td><td ><textarea></textarea></td>
+      <td ><textarea></textarea></td><td ><textarea></textarea></td>
+      <td ><textarea></textarea></td>
     </tr>
     <tr>
-      <td class="mdl-data-table__cell--non-numeric"><textarea></textarea></td><td class="mdl-data-table__cell--non-numeric"><textarea></textarea></td>
-      <td class="mdl-data-table__cell--non-numeric"><textarea></textarea></td><td class="mdl-data-table__cell--non-numeric"><textarea></textarea></td>
-      <td class="mdl-data-table__cell--non-numeric"><textarea></textarea></td><td class="mdl-data-table__cell--non-numeric"><textarea></textarea></td>
-      <td class="mdl-data-table__cell--non-numeric"><textarea></textarea></td>
+      <td ><textarea></textarea></td><td ><textarea></textarea></td>
+      <td ><textarea></textarea></td><td ><textarea></textarea></td>
+      <td ><textarea></textarea></td><td ><textarea></textarea></td>
+      <td ><textarea></textarea></td>
     </tr>
     <tr>
-      <td class="mdl-data-table__cell--non-numeric"><textarea></textarea></td><td class="mdl-data-table__cell--non-numeric"><textarea></textarea></td>
-      <td class="mdl-data-table__cell--non-numeric"><textarea></textarea></td><td class="mdl-data-table__cell--non-numeric"><textarea></textarea></td>
-      <td class="mdl-data-table__cell--non-numeric"><textarea></textarea></td><td class="mdl-data-table__cell--non-numeric"><textarea></textarea></td>
-      <td class="mdl-data-table__cell--non-numeric"><textarea></textarea></td>
+      <td ><textarea></textarea></td><td ><textarea></textarea></td>
+      <td ><textarea></textarea></td><td ><textarea></textarea></td>
+      <td ><textarea></textarea></td><td ><textarea></textarea></td>
+      <td ><textarea></textarea></td>
     </tr>
     <tr>
-      <td class="mdl-data-table__cell--non-numeric"><textarea></textarea></td><td class="mdl-data-table__cell--non-numeric"><textarea></textarea></td>
-      <td class="mdl-data-table__cell--non-numeric"><textarea></textarea></td><td class="mdl-data-table__cell--non-numeric"><textarea></textarea></td>
-      <td class="mdl-data-table__cell--non-numeric"><textarea></textarea></td><td class="mdl-data-table__cell--non-numeric"><textarea></textarea></td>
-      <td class="mdl-data-table__cell--non-numeric"><textarea></textarea></td>
+      <td ><textarea></textarea></td><td ><textarea></textarea></td>
+      <td ><textarea></textarea></td><td ><textarea></textarea></td>
+      <td ><textarea></textarea></td><td ><textarea></textarea></td>
+      <td ><textarea></textarea></td>
     </tr>
     <tr>
-      <td class="mdl-data-table__cell--non-numeric"><textarea></textarea></td><td class="mdl-data-table__cell--non-numeric"><textarea></textarea></td>
-      <td class="mdl-data-table__cell--non-numeric"><textarea></textarea></td><td class="mdl-data-table__cell--non-numeric"><textarea></textarea></td>
-      <td class="mdl-data-table__cell--non-numeric"><textarea></textarea></td><td class="mdl-data-table__cell--non-numeric"><textarea></textarea></td>
-      <td class="mdl-data-table__cell--non-numeric"><textarea></textarea></td>
+      <td ><textarea></textarea></td><td ><textarea></textarea></td>
+      <td ><textarea></textarea></td><td ><textarea></textarea></td>
+      <td ><textarea></textarea></td><td ><textarea></textarea></td>
+      <td ><textarea></textarea></td>
     </tr>
     <tr>
-      <td class="mdl-data-table__cell--non-numeric"><textarea></textarea></td><td class="mdl-data-table__cell--non-numeric"><textarea></textarea></td>
-      <td class="mdl-data-table__cell--non-numeric"><textarea></textarea></td><td class="mdl-data-table__cell--non-numeric"><textarea></textarea></td>
-      <td class="mdl-data-table__cell--non-numeric"><textarea></textarea></td><td class="mdl-data-table__cell--non-numeric"><textarea></textarea></td>
-      <td class="mdl-data-table__cell--non-numeric"><textarea></textarea></td>
+      <td ><textarea></textarea></td><td ><textarea></textarea></td>
+      <td ><textarea></textarea></td><td ><textarea></textarea></td>
+      <td ><textarea></textarea></td><td ><textarea></textarea></td>
+      <td ><textarea></textarea></td>
     </tr>
     <tr>
-      <td class="mdl-data-table__cell--non-numeric"><textarea></textarea></td><td class="mdl-data-table__cell--non-numeric"><textarea></textarea></td>
-      <td class="mdl-data-table__cell--non-numeric"><textarea></textarea></td><td class="mdl-data-table__cell--non-numeric"><textarea></textarea></td>
-      <td class="mdl-data-table__cell--non-numeric"><textarea></textarea></td><td class="mdl-data-table__cell--non-numeric"><textarea></textarea></td>
-      <td class="mdl-data-table__cell--non-numeric"><textarea></textarea></td>
+      <td ><textarea></textarea></td><td ><textarea></textarea></td>
+      <td ><textarea></textarea></td><td ><textarea></textarea></td>
+      <td ><textarea></textarea></td><td ><textarea></textarea></td>
+      <td ><textarea></textarea></td>
     </tr>
   </tbody>
 </table>

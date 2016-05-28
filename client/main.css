@@ -1,5 +1,17 @@
 /* CSS declarations go here */
 
+#index-img {
+  /*background-image: url('images/bg-img.jpg');*/
+  background: white;
+      text-align: center;
+      height: 100%;
+          background-size: cover;
+}
+
+#index-img img {
+margin-top: 5%;
+}
+
 #goodrx_low-price_widget {
   display: flex;
   position: absolute;
@@ -52,7 +64,7 @@ vertical-align: text-top;
 }
 
 
-#meeting-finder-results-table {
+table {
   width: 100%;
   border-collapse: collapse;
       margin: 25px 0;
@@ -75,6 +87,19 @@ td, th {
   padding: 6px;
   border: 1px solid #ccc;
   text-align: left;
+
+   /*white-space:nowrap;*/
+   overflow:hidden;
+   text-overflow:ellipsis;
+
+
+}
+td:hover, th:hover {
+  overflow: visible;
+}
+
+input.long-field {
+    width: 100%;
 }
 
 @media
