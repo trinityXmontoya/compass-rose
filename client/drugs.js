@@ -115,6 +115,7 @@ var info = {
 };
 
 var loadGoodRXWidget = function(drug) {
+  $("#goodrx_low-price_widget").html("<div id=\"goodrx_low-price_widget\"><div class=\"drug-info-loading-spinner\"><div class=\"mdl-spinner mdl-js-spinner is-active\"></div></div></div>")
     _grxdn = drug;
     (function(d, t) {
         var g = d.createElement(t),
