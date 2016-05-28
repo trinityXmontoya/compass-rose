@@ -1,209 +1,201 @@
 <template name="SelfHelp">
-  <style>
-  .card-image.mdl-card {
-  width: 256px;
-  height: 256px;
-  background: url('../assets/demos/image_card.jpg') center / cover;
-  }
-  .card-image > .mdl-card__actions {
-  height: 52px;
-  padding: 16px;
-  background: rgba(0, 0, 0, 0.2);
-  }
-  .card-image__filename {
-  color: #fff;
-  font-size: 14px;
-  font-weight: 500;
-  }
-  </style>
-
-  <div id="example1"></div>
-
-  <!-- <a href="/web/viewer.html?file=%2Fyourpdf.pdf">Open yourpdf.pdf with PDF.js</a> -->
-
-  <h2>Self-Help Resources</h2>
-
-  <div class="mdl-grid">
-    <div class="mdl-cell mdl-cell--4-col">
-      <div class="card-image mdl-card mdl-shadow--2dp"
-           style="background-image: url('{{resources.[0].imgUrl}}')">
-        <div class="mdl-card__title mdl-card--expand"></div>
-        <div class="mdl-card__actions">
-          <a data-pgnum="{{resources.[0].page_begin}}" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-            <span class="card-image__filename">{{resources.[0].title}}</span>
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="mdl-cell mdl-cell--4-col">
-      <div class="card-image mdl-card mdl-shadow--2dp"
-           style="background-image: url('{{resources.[1].imgUrl}}')">
-        <div class="mdl-card__title mdl-card--expand"></div>
-        <div class="mdl-card__actions">
-          <a data-pgnum="{{resources.[1].page_begin}}" class="self-help-resource mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-            <span class="card-image__filename">{{resources.[1].title}}</span>
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="mdl-cell mdl-cell--4-col">
-      <div class="card-image mdl-card mdl-shadow--2dp"
-           style="background-image: url('{{resources.[2].imgUrl}}')">
-        <div class="mdl-card__title mdl-card--expand"></div>
-        <div class="mdl-card__actions">
-          <a data-pgnum="{{resources.[2].page_begin}}" class="self-help-resource mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-            <span class="card-image__filename">{{resources.[2].title}}</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="mdl-grid">
-    <div class="mdl-cell mdl-cell--4-col">
-      <div class="card-image mdl-card mdl-shadow--2dp"
-           style="background-image: url('{{resources.[3].imgUrl}}')">
-        <div class="mdl-card__title mdl-card--expand"></div>
-        <div class="mdl-card__actions">
-          <a data-pgnum="{{resources.[3].page_begin}}" class="self-help-resource mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-            <span class="card-image__filename">{{resources.[3].title}}</span>
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="mdl-cell mdl-cell--4-col">
-      <div class="card-image mdl-card mdl-shadow--2dp"
-           style="background-image: url('{{resources.[4].imgUrl}}')">
-        <div class="mdl-card__title mdl-card--expand"></div>
-        <div class="mdl-card__actions">
-          <a data-pgnum="{{resources.[4].page_begin}}" class="self-help-resource mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-            <span class="card-image__filename">{{resources.[4].title}}</span>
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="mdl-cell mdl-cell--4-col">
-      <div class="card-image mdl-card mdl-shadow--2dp"
-           style="background-image: url('{{resources.[5].imgUrl}}')">
-        <div class="mdl-card__title mdl-card--expand"></div>
-        <div class="mdl-card__actions">
-          <a data-pgnum="{{resources.[5].page_begin}}" class="self-help-resource mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-            <span class="card-image__filename">{{resources.[5].title}}</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="mdl-grid">
-    <div class="mdl-cell mdl-cell--4-col">
-      <div class="card-image mdl-card mdl-shadow--2dp"
-           style="background-image: url('{{resources.[6].imgUrl}}')">
-        <div class="mdl-card__title mdl-card--expand"></div>
-        <div class="mdl-card__actions">
-          <a data-pgnum="{{resources.[6].page_begin}}" class="self-help-resource mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-            <span class="card-image__filename">{{resources.[6].title}}</span>
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="mdl-cell mdl-cell--4-col">
-      <div class="card-image mdl-card mdl-shadow--2dp"
-           style="background-image: url('{{resources.[7].imgUrl}}')">
-        <div class="mdl-card__title mdl-card--expand"></div>
-        <div class="mdl-card__actions">
-          <a data-pgnum="{{resources.[7].page_begin}}" class="self-help-resource mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-            <span class="card-image__filename">{{resources.[7].title}}</span>
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="mdl-cell mdl-cell--4-col">
-      <div class="card-image mdl-card mdl-shadow--2dp"
-           style="background-image: url('{{resources.[8].imgUrl}}')">
-        <div class="mdl-card__title mdl-card--expand"></div>
-        <div class="mdl-card__actions">
-          <a data-pgnum="{{resources.[8].page_begin}}" class="self-help-resource mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-            <span class="card-image__filename">{{resources.[8].title}}</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="mdl-grid">
-    <div class="mdl-cell mdl-cell--4-col">
-      <div class="card-image mdl-card mdl-shadow--2dp"
-           style="background-image: url('{{resources.[9].imgUrl}}')">
-        <div class="mdl-card__title mdl-card--expand"></div>
-        <div class="mdl-card__actions">
-          <a data-pgnum="{{resources.[9].page_begin}}" class="self-help-resource mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-            <span class="card-image__filename">{{resources.[9].title}}</span>
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="mdl-cell mdl-cell--4-col">
-      <div class="card-image mdl-card mdl-shadow--2dp"
-           style="background-image: url('{{resources.[10].imgUrl}}')">
-        <div class="mdl-card__title mdl-card--expand"></div>
-        <div class="mdl-card__actions">
-          <a data-pgnum="{{resources.[10].page_begin}}" class="self-help-resource mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-            <span class="card-image__filename">{{resources.[10].title}}</span>
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="mdl-cell mdl-cell--4-col">
-      <div class="card-image mdl-card mdl-shadow--2dp"
-           style="background-image: url('{{resources.[11].imgUrl}}')">
-        <div class="mdl-card__title mdl-card--expand"></div>
-        <div class="mdl-card__actions">
-          <a data-pgnum="{{resources.[11].page_begin}}" class="self-help-resource mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-            <span class="card-image__filename">{{resources.[11].title}}</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="mdl-grid">
-    <div class="mdl-cell mdl-cell--4-col">
-      <div class="card-image mdl-card mdl-shadow--2dp"
-           style="background-image: url('{{resources.[12].imgUrl}}')">
-        <div class="mdl-card__title mdl-card--expand"></div>
-        <div class="mdl-card__actions">
-          <a data-pgnum="{{resources.[12].page_begin}}" class="self-help-resource mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-            <span class="card-image__filename">{{resources.[12].title}}</span>
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="mdl-cell mdl-cell--4-col">
-      <div class="card-image mdl-card mdl-shadow--2dp"
-           style="background-image: url('{{resources.[13].imgUrl}}')">
-        <div class="mdl-card__title mdl-card--expand"></div>
-        <div class="mdl-card__actions">
-          <a data-pgnum="{{resources.[13].page_begin}}" class="self-help-resource mdl-button mdl-button--colored mdl-js-button mdl  -js-ripple-effect">
-            <span class="card-image__filename">{{resources.[13].title}}</span>
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="mdl-cell mdl-cell--4-col">
-      <div class="card-image mdl-card mdl-shadow--2dp"
-           style="background-image: url('{{resources.[14].imgUrl}}')">
-        <div class="mdl-card__title mdl-card--expand"></div>
-        <div class="mdl-card__actions">
-          <a data-pgnum="{{resources.[14].page_begin}}" class="self-help-resource mdl-button mdl-button--colored mdl-js-button mdl  -js-ripple-effect">
-            <span class="card-image__filename">{{resources.[14].title}}</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div>Source: <a href="http://www.methadone.us/matrix.pdf#page=39">Client’s Handbook
-Matrix Intensive Outpatient Treatment for
-People With Stimulant Use Disorders</a></div>
+	<style>
+		.card-image.mdl-card {
+		width: 256px;
+		height: 256px;
+		background: url('../assets/demos/image_card.jpg') center / cover;
+		}
+		.card-image > .mdl-card__actions {
+		height: 52px;
+		padding: 16px;
+		background: rgba(0, 0, 0, 0.2);
+		}
+		.card-image__filename {
+		color: #fff;
+		font-size: 14px;
+		font-weight: 500;
+		}
+	</style>
+	<div id="example1"></div>
+	<!-- <a href="/web/viewer.html?file=%2Fyourpdf.pdf">Open yourpdf.pdf with PDF.js</a> -->
+	<h2>Self-Help Resources</h2>
+	<div class="mdl-grid">
+		<div class="mdl-cell mdl-cell--4-col">
+			<div class="card-image mdl-card mdl-shadow--2dp"
+				style="background-image: url('{{resources.[0].imgUrl}}')">
+				<div class="mdl-card__title mdl-card--expand"></div>
+				<div class="mdl-card__actions">
+					<a data-pgnum="{{resources.[0].page_begin}}" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+					<span class="card-image__filename">{{resources.[0].title}}</span>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="mdl-cell mdl-cell--4-col">
+			<div class="card-image mdl-card mdl-shadow--2dp"
+				style="background-image: url('{{resources.[1].imgUrl}}')">
+				<div class="mdl-card__title mdl-card--expand"></div>
+				<div class="mdl-card__actions">
+					<a data-pgnum="{{resources.[1].page_begin}}" class="self-help-resource mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+					<span class="card-image__filename">{{resources.[1].title}}</span>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="mdl-cell mdl-cell--4-col">
+			<div class="card-image mdl-card mdl-shadow--2dp"
+				style="background-image: url('{{resources.[2].imgUrl}}')">
+				<div class="mdl-card__title mdl-card--expand"></div>
+				<div class="mdl-card__actions">
+					<a data-pgnum="{{resources.[2].page_begin}}" class="self-help-resource mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+					<span class="card-image__filename">{{resources.[2].title}}</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="mdl-grid">
+		<div class="mdl-cell mdl-cell--4-col">
+			<div class="card-image mdl-card mdl-shadow--2dp"
+				style="background-image: url('{{resources.[3].imgUrl}}')">
+				<div class="mdl-card__title mdl-card--expand"></div>
+				<div class="mdl-card__actions">
+					<a data-pgnum="{{resources.[3].page_begin}}" class="self-help-resource mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+					<span class="card-image__filename">{{resources.[3].title}}</span>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="mdl-cell mdl-cell--4-col">
+			<div class="card-image mdl-card mdl-shadow--2dp"
+				style="background-image: url('{{resources.[4].imgUrl}}')">
+				<div class="mdl-card__title mdl-card--expand"></div>
+				<div class="mdl-card__actions">
+					<a data-pgnum="{{resources.[4].page_begin}}" class="self-help-resource mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+					<span class="card-image__filename">{{resources.[4].title}}</span>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="mdl-cell mdl-cell--4-col">
+			<div class="card-image mdl-card mdl-shadow--2dp"
+				style="background-image: url('{{resources.[5].imgUrl}}')">
+				<div class="mdl-card__title mdl-card--expand"></div>
+				<div class="mdl-card__actions">
+					<a data-pgnum="{{resources.[5].page_begin}}" class="self-help-resource mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+					<span class="card-image__filename">{{resources.[5].title}}</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="mdl-grid">
+		<div class="mdl-cell mdl-cell--4-col">
+			<div class="card-image mdl-card mdl-shadow--2dp"
+				style="background-image: url('{{resources.[6].imgUrl}}')">
+				<div class="mdl-card__title mdl-card--expand"></div>
+				<div class="mdl-card__actions">
+					<a data-pgnum="{{resources.[6].page_begin}}" class="self-help-resource mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+					<span class="card-image__filename">{{resources.[6].title}}</span>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="mdl-cell mdl-cell--4-col">
+			<div class="card-image mdl-card mdl-shadow--2dp"
+				style="background-image: url('{{resources.[7].imgUrl}}')">
+				<div class="mdl-card__title mdl-card--expand"></div>
+				<div class="mdl-card__actions">
+					<a data-pgnum="{{resources.[7].page_begin}}" class="self-help-resource mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+					<span class="card-image__filename">{{resources.[7].title}}</span>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="mdl-cell mdl-cell--4-col">
+			<div class="card-image mdl-card mdl-shadow--2dp"
+				style="background-image: url('{{resources.[8].imgUrl}}')">
+				<div class="mdl-card__title mdl-card--expand"></div>
+				<div class="mdl-card__actions">
+					<a data-pgnum="{{resources.[8].page_begin}}" class="self-help-resource mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+					<span class="card-image__filename">{{resources.[8].title}}</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="mdl-grid">
+		<div class="mdl-cell mdl-cell--4-col">
+			<div class="card-image mdl-card mdl-shadow--2dp"
+				style="background-image: url('{{resources.[9].imgUrl}}')">
+				<div class="mdl-card__title mdl-card--expand"></div>
+				<div class="mdl-card__actions">
+					<a data-pgnum="{{resources.[9].page_begin}}" class="self-help-resource mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+					<span class="card-image__filename">{{resources.[9].title}}</span>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="mdl-cell mdl-cell--4-col">
+			<div class="card-image mdl-card mdl-shadow--2dp"
+				style="background-image: url('{{resources.[10].imgUrl}}')">
+				<div class="mdl-card__title mdl-card--expand"></div>
+				<div class="mdl-card__actions">
+					<a data-pgnum="{{resources.[10].page_begin}}" class="self-help-resource mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+					<span class="card-image__filename">{{resources.[10].title}}</span>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="mdl-cell mdl-cell--4-col">
+			<div class="card-image mdl-card mdl-shadow--2dp"
+				style="background-image: url('{{resources.[11].imgUrl}}')">
+				<div class="mdl-card__title mdl-card--expand"></div>
+				<div class="mdl-card__actions">
+					<a data-pgnum="{{resources.[11].page_begin}}" class="self-help-resource mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+					<span class="card-image__filename">{{resources.[11].title}}</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="mdl-grid">
+		<div class="mdl-cell mdl-cell--4-col">
+			<div class="card-image mdl-card mdl-shadow--2dp"
+				style="background-image: url('{{resources.[12].imgUrl}}')">
+				<div class="mdl-card__title mdl-card--expand"></div>
+				<div class="mdl-card__actions">
+					<a data-pgnum="{{resources.[12].page_begin}}" class="self-help-resource mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+					<span class="card-image__filename">{{resources.[12].title}}</span>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="mdl-cell mdl-cell--4-col">
+			<div class="card-image mdl-card mdl-shadow--2dp"
+				style="background-image: url('{{resources.[13].imgUrl}}')">
+				<div class="mdl-card__title mdl-card--expand"></div>
+				<div class="mdl-card__actions">
+					<a data-pgnum="{{resources.[13].page_begin}}" class="self-help-resource mdl-button mdl-button--colored mdl-js-button mdl  -js-ripple-effect">
+					<span class="card-image__filename">{{resources.[13].title}}</span>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="mdl-cell mdl-cell--4-col">
+			<div class="card-image mdl-card mdl-shadow--2dp"
+				style="background-image: url('{{resources.[14].imgUrl}}')">
+				<div class="mdl-card__title mdl-card--expand"></div>
+				<div class="mdl-card__actions">
+					<a data-pgnum="{{resources.[14].page_begin}}" class="self-help-resource mdl-button mdl-button--colored mdl-js-button mdl  -js-ripple-effect">
+					<span class="card-image__filename">{{resources.[14].title}}</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div>Source: <a href="http://www.methadone.us/matrix.pdf#page=39">Client’s Handbook
+		Matrix Intensive Outpatient Treatment for
+		People With Stimulant Use Disorders</a>
+	</div>
 </template>

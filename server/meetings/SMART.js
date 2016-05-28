@@ -48,6 +48,3 @@ Meetings.SMART = {
     return _.compact(_.flatten(allStateResults))
   }
 }
-
-
-// TODO what does normalize whitespace do

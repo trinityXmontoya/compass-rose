@@ -4,10 +4,10 @@ USMeetings = new Mongo.Collection('USMeetings');
 Session_MeetingFinder_Searching = new ReactiveVar(false)
 Session_MeetingFinder_State = new ReactiveVar(null)
 
-Template.MeetingFinder.onCreated(function(){
+Template.MeetingFinder.onCreated(function() {
 	Session_MeetingFinder_State.set(null)
-	this.autorun(()=> {
-		if (Session_MeetingFinder_State.get()){
+	this.autorun(() => {
+		if (Session_MeetingFinder_State.get()) {
 			var searchHandle = Meteor.subscribe("meetings.all", Session_MeetingFinder_State.get());
 			Session_MeetingFinder_Searching.set(!(searchHandle.ready()));
 		}
@@ -15,9 +15,9 @@ Template.MeetingFinder.onCreated(function(){
 })
 
 Template.MeetingFinder.events({
-	"change #meeting-finder-form-state" (evt,instance){
+	"change #meeting-finder-form-state" (evt, instance) {
 		var state = evt.currentTarget.value
-		if (state){
+		if (state) {
 			Session_MeetingFinder_State.set(state)
 			evt.currentTarget.value = ""
 		}
@@ -25,16 +25,20 @@ Template.MeetingFinder.events({
 })
 
 Template.MeetingFinder.helpers({
-	searching: function(){ return Session_MeetingFinder_Searching.get()},
-	searchResults: function(){
-		return USMeetings.find({state: Session_MeetingFinder_State.get()})
-	}
-})
-//
+		searching: function() {
+			return Session_MeetingFinder_Searching.get()
+		},
+		searchResults: function() {
+			return USMeetings.find({
+				state: Session_MeetingFinder_State.get()
+			})
+		}
+	})
+	//
 
-Template.MeetingFinder.onRendered(function () {
+Template.MeetingFinder.onRendered(function() {
 	$("select#meeting-finder-form-state").chosen({
-    inherit_select_classes: true,
-    max_selected_options: 1
-  });
+		inherit_select_classes: true,
+		max_selected_options: 1
+	});
 });

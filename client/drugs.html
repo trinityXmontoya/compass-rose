@@ -1,120 +1,111 @@
 <template name="Drugs">
-
-  <!-- Tabs -->
-  <div class="mdl-tabs">
-    <div class="mdl-tabs__tab-bar">
-      <a href="#fixed-tab-methadone" class="mdl-tabs__tab is-active drug" data-value="methadone">Methadone</a>
-      <a href="#fixed-tab-buprenorphine" class="mdl-tabs__tab drug" data-value="buprenorphine">Buprenorphine</a>
-      <a href="#fixed-tab-naltrexone" class="mdl-tabs__tab drug" data-value="naltrexone">Naltrexone</a>
-    </div>
-
-    <div class="mdl-grid">
-      <div class="mdl-cell mdl-cell--12-col">
-        {{>Drugs_info drug=selection}}
-      </div>
-    </div>
-  </div>
+	<!-- Tabs -->
+	<div class="mdl-tabs">
+		<div class="mdl-tabs__tab-bar">
+			<a href="#fixed-tab-methadone" class="mdl-tabs__tab is-active drug" data-value="methadone">Methadone</a>
+			<a href="#fixed-tab-buprenorphine" class="mdl-tabs__tab drug" data-value="buprenorphine">Buprenorphine</a>
+			<a href="#fixed-tab-naltrexone" class="mdl-tabs__tab drug" data-value="naltrexone">Naltrexone</a>
+		</div>
+		<div class="mdl-grid">
+			<div class="mdl-cell mdl-cell--12-col">
+				{{>Drugs_info drug=selection}}
+			</div>
+		</div>
+	</div>
 </template>
-
 <template name="Drugs_info">
-
-  <div class="mdl-tabs__panel is-active fixed-tab-content" id="fixed-tab-{{drug.name}}" style="margin: 5% 0;">
-
-    <!-- INFO -->
-    <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
-      <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white"
-              style="background-image:url('images/pillbox-{{drug.name}}.jpg');background-size:contain">
-        <i class="material-icons">info</i>
-      </header>
-      <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
-        <div class="mdl-card__supporting-text">
-          <h4>{{capitalize drug.name}}</h4>
-          {{drug.basicInfo}}
-        </div>
-        <div class="mdl-card__actions">
-          <a href="{{drug.source}}" class="mdl-button">More Info - SAMHSA</a>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- SIDE EFFECTS -->
-    <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
-      <div class="mdl-card mdl-cell mdl-cell--12-col">
-        <div class="mdl-card__supporting-text">
-          <h4>Side Effects</h4>
-          <ul class="toc">
-             <h4>Resources</h4>
-             {{#each sideEffect in drug.sideEffects}}
-               <a href="{{sideEffect.link}}" target="_blank">{{sideEffect.title}}</a>
-            {{/each}}
-           </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- OTHER DRUGS -->
-    <section class="section--center mdl-grid">
-      <!-- GOODRX -->
-      <div class="mdl-card mdl-cell mdl-cell--6-col mdl-shadow--2dp">
-        <div id="goodrx_low-price_widget">
-          <div class="drug-info-loading-spinner"><div class="mdl-spinner mdl-js-spinner is-active"></div></div>
-        </div>
-        <div class="mdl-card__actions mdl-card--border" style="    bottom: 0;
-    position: absolute;
-    background: white;">
-          <a href="http://www.goodrx.com/{{drug.name}}" target="_blank" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-            GoodRX - #1 iOS & Android Medical App
-          </a>
-        </div>
-      </div>
-      <!-- DRUG INTERACTIONS -->
-      <div class="mdl-card mdl-cell mdl-cell--6-col mdl-shadow--2dp" style="    background: rgb(255,110,64);">
-        <div class="mdl-card__title">
-          <h2 class="mdl-card__title-text">Interactions with other Drugs </h2>
-        </div>
-        <div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
-          <i class="material-icons">warning</i>WARNING
-          <br>
-
-          <ul>
-            <li>Benzodiazepines (Valium, Xanax)</li>
-            <li>Benzodiazepine Analogs (Clonazolam, Diclazipam)</li>
-            <li>Barbiturates (Phenobarbital, Amobarbital)</li>
-          </ul>
-          <br>
-          There are potentially adverse effects of these combinations.
-          These side effects include, but are not limited to, decrease in breathing ability and blood pressure as well as death.
-          Use a <a href="{{drug.interactionCheckerLink}}" target="_blank" style="color:black">Drug Interaction Checker</a> and ask a qualified health professional before using.
-        </div>
-        <div id="medscape-interaction-checker" class="mdl-card__actions" style="    background: white;">
-          <a href="http://www.webmd.com/my-medicine/default.htm#add/{{drug.webMdChecker}}/current/" target="_blank" class="mdl-button">WebMD Medication Checker</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- RECOVERY STORIES -->
-    <section id="drug-interaction-checker" class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
-      <div class="mdl-card mdl-cell mdl-cell--12-col">
-        <div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
-          <h4 class="mdl-cell mdl-cell--12-col">Recovery Stories</h4>
-          {{#each story in drug.successStories}}
-            <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
-              <div class="section__circle-container__circle mdl-color--primary drug-interaction-samples"
-                   style="background-image: url('https://randomuser.me/api/portraits/{{story.image}}')"
-              ></div>
-            </div>
-            <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
-              <h5>{{story.name}}</h5>
-              {{story.text}}
-            </div>
-          {{/each}}
-        </div>
-        <div id="medscape-interaction-checker" class="mdl-card__actions">
-          <a href="{{drug.successStoriesLink}}" target="_blank" class="mdl-button">Read More</a>
-        </div>
-      </div>
-    </section>
-
-  </div>
+	<div class="mdl-tabs__panel is-active fixed-tab-content" id="fixed-tab-{{drug.name}}" style="margin: 5% 0;">
+		<!-- INFO -->
+		<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+			<header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white"
+				style="background-image:url('images/pillbox-{{drug.name}}.jpg');background-size:contain">
+				<i class="material-icons">info</i>
+			</header>
+			<div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+				<div class="mdl-card__supporting-text">
+					<h4>{{capitalize drug.name}}</h4>
+					{{drug.basicInfo}}
+				</div>
+				<div class="mdl-card__actions">
+					<a href="{{drug.source}}" class="mdl-button">More Info - SAMHSA</a>
+				</div>
+			</div>
+		</section>
+		<!-- SIDE EFFECTS -->
+		<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+			<div class="mdl-card mdl-cell mdl-cell--12-col">
+				<div class="mdl-card__supporting-text">
+					<h4>Side Effects</h4>
+					<ul class="toc">
+						<h4>Resources</h4>
+						{{#each sideEffect in drug.sideEffects}}
+						<a href="{{sideEffect.link}}" target="_blank">{{sideEffect.title}}</a>
+						{{/each}}
+					</ul>
+				</div>
+			</div>
+		</section>
+		<!-- OTHER DRUGS -->
+		<section class="section--center mdl-grid">
+			<!-- GOODRX -->
+			<div class="mdl-card mdl-cell mdl-cell--6-col mdl-shadow--2dp">
+				<div id="goodrx_low-price_widget">
+					<div class="drug-info-loading-spinner">
+						<div class="mdl-spinner mdl-js-spinner is-active"></div>
+					</div>
+				</div>
+				<div class="mdl-card__actions mdl-card--border" style="    bottom: 0;
+					position: absolute;
+					background: white;">
+					<a href="http://www.goodrx.com/{{drug.name}}" target="_blank" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+					GoodRX - #1 iOS & Android Medical App
+					</a>
+				</div>
+			</div>
+			<!-- DRUG INTERACTIONS -->
+			<div class="mdl-card mdl-cell mdl-cell--6-col mdl-shadow--2dp" style="    background: rgb(255,110,64);">
+				<div class="mdl-card__title">
+					<h2 class="mdl-card__title-text">Interactions with other Drugs </h2>
+				</div>
+				<div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
+					<i class="material-icons">warning</i>WARNING
+					<br>
+					<ul>
+						<li>Benzodiazepines (Valium, Xanax)</li>
+						<li>Benzodiazepine Analogs (Clonazolam, Diclazipam)</li>
+						<li>Barbiturates (Phenobarbital, Amobarbital)</li>
+					</ul>
+					<br>
+					There are potentially adverse effects of these combinations.
+					These side effects include, but are not limited to, decrease in breathing ability and blood pressure as well as death.
+					Use a <a href="{{drug.interactionCheckerLink}}" target="_blank" style="color:black">Drug Interaction Checker</a> and ask a qualified health professional before using.
+				</div>
+				<div id="medscape-interaction-checker" class="mdl-card__actions" style="    background: white;">
+					<a href="http://www.webmd.com/my-medicine/default.htm#add/{{drug.webMdChecker}}/current/" target="_blank" class="mdl-button">WebMD Medication Checker</a>
+				</div>
+			</div>
+		</section>
+		<!-- RECOVERY STORIES -->
+		<section id="drug-interaction-checker" class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+			<div class="mdl-card mdl-cell mdl-cell--12-col">
+				<div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
+					<h4 class="mdl-cell mdl-cell--12-col">Recovery Stories</h4>
+					{{#each story in drug.successStories}}
+					<div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+						<div class="section__circle-container__circle mdl-color--primary drug-interaction-samples"
+							style="background-image: url('https://randomuser.me/api/portraits/{{story.image}}')"
+							></div>
+					</div>
+					<div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+						<h5>{{story.name}}</h5>
+						{{story.text}}
+					</div>
+					{{/each}}
+				</div>
+				<div id="medscape-interaction-checker" class="mdl-card__actions">
+					<a href="{{drug.successStoriesLink}}" target="_blank" class="mdl-button">Read More</a>
+				</div>
+			</div>
+		</section>
+	</div>
 </template>
